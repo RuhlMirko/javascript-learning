@@ -97,5 +97,19 @@ let filteredArray = fruits.filter((element) => {
   }
 });
 // One line of the code above
-filteredArray = fruits.filter(element => {return element <= 15})
+filteredArray = fruits.filter((element) => {return element <= 15;});
+filteredArray = fruits.filter((element) => element <= 15);
 console.log(filteredArray);
+
+let firstWave = [18,20,16,15,21]
+let secondWave = [16,17,14,15,19]
+let thirdWave = [20,22,26,16,20]
+
+function checkAge(age_list){
+  let new_Array = age_list.filter((element) => element >= 18 )
+  console.log(new_Array)
+}
+console.log("Exercise: ")
+checkAge(firstWave)
+checkAge(secondWave)
+checkAge(thirdWave)
