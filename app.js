@@ -47,40 +47,47 @@ for (i in string) {
   console.log(string[i]);
 }
 
-function greetUser(name, time = 'morning') {
+function greetUser(name, time = "morning") {
   console.log(`Hello ${name}, good ${time}`);
 }
 
 greetUser("Mirko");
 greetUser("Roger");
-greetUser("Joel", 'Afternoon');
+greetUser("Joel", "Afternoon");
 
-function evenOrOdd(number){    
-    if (number%2==0){
-        return 'Even'
-    }
-    else{
-        return 'Odd'
-    }
-    // Optimal way of doing it, code above is for clarity
-    return number%2===0 ? "Even" : "Odd";
+function evenOrOdd(number) {
+  if (number % 2 == 0) {
+    return "Even";
+  } else {
+    return "Odd";
+  }
+  // Optimal way of doing it, code above is for clarity
+  return number % 2 === 0 ? "Even" : "Odd";
 }
 
-console.log(evenOrOdd(5)) 
-console.log(evenOrOdd(6)) 
+console.log(evenOrOdd(5));
+console.log(evenOrOdd(6));
 
-function convertCurrency(USD){
-    return USD * 1.5
+function convertCurrency(USD) {
+  return USD * 1.5;
 }
 
-console.log(convertCurrency(1200))
-console.log(convertCurrency(500))
-console.log(convertCurrency(200))
+console.log(convertCurrency(1200));
+console.log(convertCurrency(500));
+console.log(convertCurrency(200));
 
 // Arrow Functions
 const convertArrowCurrency = (USD) => {
-    return USD*1.5
-}
+  return USD * 1.5;
+};
 
-console.log(convertArrowCurrency(1200))
+console.log(convertArrowCurrency(1200));
 
+let fruits = ["Apple", "Bananas", "Eggs", "Milk"];
+console.log(fruits[1]);
+fruits.push("Pear");
+fruits.filter((element) => {
+  console.log(element);
+});
+console.log(fruits);
+console.log(fruits[fruits.length - 1]);
