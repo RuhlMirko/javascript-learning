@@ -80,14 +80,22 @@ console.log(convertCurrency(200));
 const convertArrowCurrency = (USD) => {
   return USD * 1.5;
 };
-
 console.log(convertArrowCurrency(1200));
 
 let fruits = ["Apple", "Bananas", "Eggs", "Milk"];
 console.log(fruits[1]);
 fruits.push("Pear");
-fruits.filter((element) => {
-  console.log(element);
-});
 console.log(fruits);
 console.log(fruits[fruits.length - 1]);
+
+// Array filter
+fruits = [20, 15, 10, 30];
+let filteredArray = fruits.filter((element) => {
+  console.log(element);
+  if (element <= 15) {
+    return true;
+  }
+});
+// One line of the code above
+filteredArray = fruits.filter(element => {return element <= 15})
+console.log(filteredArray);
