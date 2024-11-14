@@ -98,7 +98,7 @@ let filteredArray = fruits.filter((element) => {
 });
 // One line of the code above
 filteredArray = fruits.filter((element) => {return element <= 15;});
-filteredArray = fruits.filter((element) => element <= 15);
+filteredArray = fruits.filter(element => element <= 15);
 console.log(filteredArray);
 
 let firstWave = [18,20,16,15,21]
