@@ -97,24 +97,42 @@ let filteredArray = fruits.filter((element) => {
   }
 });
 // One line of the code above
-filteredArray = fruits.filter((element) => {return element <= 15;});
-filteredArray = fruits.filter(element => element <= 15);
+filteredArray = fruits.filter((element) => {
+  return element <= 15;
+});
+filteredArray = fruits.filter((element) => element <= 15);
 console.log(filteredArray);
 
-let firstWave = [18,20,16,15,21]
-let secondWave = [16,17,14,15,19]
-let thirdWave = [20,22,26,16,20]
+let firstWave = [18, 20, 16, 15, 21];
+let secondWave = [16, 17, 14, 15, 19];
+let thirdWave = [20, 22, 26, 16, 20];
 
-function checkAge(age_list){
-  let new_Array = age_list.filter((element) => element >= 18 )
+function checkAge(age_list) {
+  let new_Array = age_list.filter((element) => element >= 18);
+  console.log(new_Array);
+}
+console.log("Exercise: ");
+checkAge(firstWave);
+checkAge(secondWave);
+checkAge(thirdWave);
+// Looping trought array
+console.log(firstWave);
+for (i in firstWave) {
+  firstWave[i] *= 2;
+}
+console.log(firstWave);
+
+console.log("Maps");
+let array = [1, 2, 3, 4, 5];
+new_Array = array.map(element => element*4);
+console.log(new_Array);
+
+console.log('Exercise')
+function convertCurrencyArray(amount_list){
+  new_Array = amount_list.map(element => element * 1.5)
   console.log(new_Array)
 }
-console.log("Exercise: ")
-checkAge(firstWave)
-checkAge(secondWave)
-checkAge(thirdWave)
-
-for (i in firstWave){
-    firstWave[i] += 20
-}
-console.log(firstWave)
+firstWave = [10,20,30,40]
+secondWaveWave = [100,150,35]
+convertCurrencyArray(firstWave)
+convertCurrencyArray(secondWaveWave)
