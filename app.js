@@ -47,9 +47,10 @@ for (i in string) {
   console.log(string[i]);
 }
 
-function greetUser(name) {
-  console.log(`Hello ${name}`);
+function greetUser(name, time = 'morning') {
+  console.log(`Hello ${name}, good ${time}`);
 }
 
 greetUser("Mirko");
-greetUser("Joel");
+greetUser("Roger");
+greetUser("Joel", 'Afternoon');
