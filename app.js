@@ -55,14 +55,32 @@ greetUser("Mirko");
 greetUser("Roger");
 greetUser("Joel", 'Afternoon');
 
-function evenOrOdd(number){
+function evenOrOdd(number){    
     if (number%2==0){
         return 'Even'
     }
     else{
         return 'Odd'
     }
+    // Optimal way of doing it, code above is for clarity
+    return number%2===0 ? "Even" : "Odd";
 }
 
 console.log(evenOrOdd(5)) 
 console.log(evenOrOdd(6)) 
+
+function convertCurrency(USD){
+    return USD * 1.5
+}
+
+console.log(convertCurrency(1200))
+console.log(convertCurrency(500))
+console.log(convertCurrency(200))
+
+// Arrow Functions
+const convertArrowCurrency = (USD) => {
+    return USD*1.5
+}
+
+console.log(convertArrowCurrency(1200))
+
