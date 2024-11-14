@@ -28,24 +28,28 @@ while (age < 20) {
   console.log(age);
 }
 
-for (let i = 0; i <5; i++){
-    console.log(i)
+for (let i = 0; i < 5; i++) {
+  console.log(i);
 }
 
-for (i=1; i<=15;i++){
-    if(i%5===0){
-        console.log(`${i} - Asap FrontEnd`)
-    }
-    else if (i%2 !== 0){
-        console.log(`${i} - Asap`)
-    }
-    else if (i%2 === 0){
-        console.log(`${i} - FrontEnd`)
-    }
+for (i = 1; i <= 15; i++) {
+  if (i % 5 === 0) {
+    console.log(`${i} - Asap FrontEnd`);
+  } else if (i % 2 !== 0) {
+    console.log(`${i} - Asap`);
+  } else if (i % 2 === 0) {
+    console.log(`${i} - FrontEnd`);
+  }
 }
 
-let string = 'ASAP Frontend'
-for (i in string){
-    console.log(string[i])
+let string = "ASAP Frontend";
+for (i in string) {
+  console.log(string[i]);
 }
 
+function greetUser(name) {
+  console.log(`Hello ${name}`);
+}
+
+greetUser("Mirko");
+greetUser("Joel");
