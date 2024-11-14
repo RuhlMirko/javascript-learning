@@ -113,3 +113,8 @@ console.log("Exercise: ")
 checkAge(firstWave)
 checkAge(secondWave)
 checkAge(thirdWave)
+
+for (i in firstWave){
+    firstWave[i] += 20
+}
+console.log(firstWave)
