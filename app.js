@@ -54,3 +54,15 @@ function greetUser(name, time = 'morning') {
 greetUser("Mirko");
 greetUser("Roger");
 greetUser("Joel", 'Afternoon');
+
+function evenOrOdd(number){
+    if (number%2==0){
+        return 'Even'
+    }
+    else{
+        return 'Odd'
+    }
+}
+
+console.log(evenOrOdd(5)) 
+console.log(evenOrOdd(6)) 
