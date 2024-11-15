@@ -124,15 +124,28 @@ console.log(firstWave);
 
 console.log("Maps");
 let array = [1, 2, 3, 4, 5];
-new_Array = array.map(element => element*4);
+new_Array = array.map((element) => element * 4);
 console.log(new_Array);
 
-console.log('Exercise')
-function convertCurrencyArray(amount_list){
-  new_Array = amount_list.map(element => element * 1.5)
-  console.log(new_Array)
+console.log("Exercise");
+function convertCurrencyArray(amount_list) {
+  new_Array = amount_list.map((element) => element * 1.5);
+  console.log(new_Array);
 }
-firstWave = [10,20,30,40]
-secondWaveWave = [100,150,35]
-convertCurrencyArray(firstWave)
-convertCurrencyArray(secondWaveWave)
+firstWave = [10, 20, 30, 40];
+secondWave = [100, 150, 35];
+convertCurrencyArray(firstWave);
+convertCurrencyArray(secondWave);
+
+
+//Objects
+console.log('Objects:')
+let user = {
+  email: "example@gmail.com",
+  password: "test1234",
+  name: "Mirko",
+  discord: "Examplediscord",
+  subscription: "vip",
+};
+console.log(user.name)
+console.log(user.email)
