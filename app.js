@@ -200,3 +200,10 @@ document.querySelector("h1").innerText += " Asap FrontEnd";
 document.querySelector("h1").style.fontFamily = "OCR A";
 
 // Event Listeners
+function changeTitle() {
+  document.querySelector("h1").style.fontFamily = "Helvetica";
+  document.querySelector("h1").innerText =
+    "Mankind is dead. Blood is fuel. Hell is full";
+  document.querySelector("h1").style.color = "red";
+  
+}
