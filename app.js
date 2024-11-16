@@ -162,14 +162,13 @@ console.log(user_array[0].name);
 console.log(user_array[1].email);
 
 function sign_up(
-    new_email,
-    new_password,
-    new_name,
-    new_discord,
-    new_subscription,
-    new_lessonsDone
-) 
-{
+  new_email,
+  new_password,
+  new_name,
+  new_discord,
+  new_subscription,
+  new_lessonsDone
+) {
   new_user = {
     email: new_email,
     password: new_password,
@@ -178,7 +177,20 @@ function sign_up(
     subscription: new_subscription,
     lessonsDone: new_lessonsDone,
   };
-  user_array.push(new_user)
+  user_array.push(new_user);
 }
 
-sign_up("mirko@mail.com", "contra123", "Joel", 'ruhl34',"vip", [1, 2, 3, 4, 5]);
+sign_up(
+  "mirko@mail.com",
+  "contra123",
+  "Joel",
+  "ruhl34",
+  "vip",
+  [1, 2, 3, 4, 5]
+);
+
+
+console.log('Document Object Model')
+document.querySelector('#heading').innerHTML('New DOM')
+
+
