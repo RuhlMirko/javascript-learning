@@ -206,3 +206,9 @@ function changeTitle() {
     "Mankind is dead. Blood is fuel. Hell is full";
   document.querySelector("h1").style.color = "red";  
 }
+
+
+function openSidebar(){
+  document.querySelector('body').classList.toggle('open')
+  console.log('CLICK')
+}
