@@ -191,6 +191,9 @@ sign_up(
 
 
 console.log('Document Object Model')
-document.querySelector('#heading').innerHTML('New DOM')
+// Slower method
+document.getElementById('heading')
+// Faster method
+console.log(document.querySelector('#heading'))
 
 
