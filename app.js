@@ -137,15 +137,24 @@ secondWave = [100, 150, 35];
 convertCurrencyArray(firstWave);
 convertCurrencyArray(secondWave);
 
-
 //Objects
-console.log('Objects:')
-let user = {
-  email: "example@gmail.com",
-  password: "test1234",
-  name: "Mirko",
-  discord: "Examplediscord",
-  subscription: "vip",
-};
-console.log(user.name)
-console.log(user.email)
+console.log("Objects:");
+let user = [
+  {
+    email: "example@gmail.com",
+    password: "test1234",
+    name: "Mirko",
+    discord: "Examplediscord",
+    subscription: "vip",
+  },  
+  {
+    email: "NEW@gmail.com",
+    password: "test1234",
+    name: "Mirko",
+    discord: "Examplediscord",
+    subscription: "vip",
+  },
+];
+
+console.log(user[0].name);
+console.log(user[1].email);
