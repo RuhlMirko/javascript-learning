@@ -139,22 +139,46 @@ convertCurrencyArray(secondWave);
 
 //Objects
 console.log("Objects:");
-let user = [
+let user_array = [
   {
     email: "example@gmail.com",
     password: "test1234",
     name: "Mirko",
     discord: "Examplediscord",
     subscription: "vip",
-  },  
+    lessonsDone: [0, 1, 2, 3],
+  },
   {
     email: "NEW@gmail.com",
     password: "test1234",
     name: "Mirko",
     discord: "Examplediscord",
     subscription: "vip",
+    lessonsDone: [0, 1, 2, 3],
   },
 ];
 
-console.log(user[0].name);
-console.log(user[1].email);
+console.log(user_array[0].name);
+console.log(user_array[1].email);
+
+function sign_up(
+    new_email,
+    new_password,
+    new_name,
+    new_discord,
+    new_subscription,
+    new_lessonsDone
+) 
+{
+  new_user = {
+    email: new_email,
+    password: new_password,
+    name: new_name,
+    discord: new_discord,
+    subscription: new_subscription,
+    lessonsDone: new_lessonsDone,
+  };
+  user_array.push(new_user)
+}
+
+sign_up("mirko@mail.com", "contra123", "Joel", 'ruhl34',"vip", [1, 2, 3, 4, 5]);
