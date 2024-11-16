@@ -189,11 +189,14 @@ sign_up(
   [1, 2, 3, 4, 5]
 );
 
-
-console.log('Document Object Model')
+console.log("Document Object Model");
 // Slower method
+/*
 document.getElementById('heading')
+*/
+
 // Faster method
-console.log(document.querySelector('#heading'))
+document.querySelector("h1").innerText += " Asap FrontEnd";
+document.querySelector("h1").style.fontFamily = "OCR A";
 
-
+// Event Listeners
