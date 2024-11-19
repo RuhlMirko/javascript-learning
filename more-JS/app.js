@@ -30,13 +30,19 @@ const drink = age >= 18 ? "wine 🍷" : "water 💧";
 console.log();
 
 // Exercise
-
 function calcTip(value) {
-  let result = value > 50 && value < 300 ? value * 0.15 : value * 0.2;
-  return result;
+  return value > 50 && value < 300 ? value * 0.15 : value * 0.2;
 }
-
 let bills = [122, 555, 44];
 let tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 let totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(totals);
+
+// Objects
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Ruhl",
+  age: 2024 - 2001,
+  job: "teacher",
+  teacher: ["Michael", "Peter", "Steven"],
+};
