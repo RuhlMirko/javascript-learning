@@ -42,9 +42,15 @@ console.log(totals);
 const jonas = {
   firstName: "Jonas",
   lastName: "Ruhl",
-  age: 2024 - 2001,
+  birthYear: 2001,
   job: "teacher",
   friends: ["Michael", "Peter", "Steven"],
+  hasDriverLicense: true,
+
+  calcAge: function () {
+    this.age = 2024 - this.birthYear;
+    return this.age;
+  },
 };
 // Dot notation and Bracket notation
 console.log(jonas.age, jonas["job"]);
@@ -62,5 +68,16 @@ jonas.location = "Portugal";
 jonas["twitter"] = "@jonas";
 
 console.log(
-  `Jonas has ${jonas.friends.length} friends, and his best friend is ${jonas.friends[0]}`
+  `${jonas.firstName} is ${jonas.calcAge()} years old, has ${
+    jonas.friends.length
+  } friends, and his best friend is ${jonas.friends[0]}`
 );
+
+function summary() {
+  let isDriver = jonas.hasDriverLicense
+    ? "he has a driver's license."
+    : "he doesn't have a drivers license.";
+  return `${jonas.firstName} is a ${jonas.age} years old ${jonas.job}, and ${isDriver}`;
+}
+
+console.log(summary());
