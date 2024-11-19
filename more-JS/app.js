@@ -1,6 +1,6 @@
 // Switch statements
 
-let new_number = Number(prompt("What number do you want to print?"));
+let new_number = 4;
 
 console.log(typeof new_number);
 
@@ -18,3 +18,11 @@ switch (new_number) {
     console.log("thursday");
     break;
 }
+
+const age = 23;
+age >= 18
+  ? console.log("I like to drink wine 🍷")
+  : console.log("I like to drink water 💧");
+
+const drink = age >= 18 ? "wine 🍷" : "water 💧";
+console.log();
