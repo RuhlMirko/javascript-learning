@@ -46,3 +46,11 @@ const jonas = {
   job: "teacher",
   teacher: ["Michael", "Peter", "Steven"],
 };
+// Dot notation and Bracket notation
+console.log(jonas.age, jonas["job"]);
+
+// Expressions in brackets notations
+let valueKey = "first";
+console.log(jonas[valueKey + "Name"]);
+valueKey = "last";
+console.log(jonas[valueKey + "Name"]);
