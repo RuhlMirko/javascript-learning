@@ -81,3 +81,12 @@ function summary() {
 }
 
 console.log(summary());
+
+// Functions
+const years = [1991, 2001, 1969, 2012];
+const ages = [];
+for (let index in years) {
+  let age = 2024 - years[index];
+  ages.push(age);
+}
+console.log(ages);
