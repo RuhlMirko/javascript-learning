@@ -79,14 +79,14 @@ function summary() {
     : "he doesn't have a drivers license.";
   return `${jonas.firstName} is a ${jonas.age} years old ${jonas.job}, and ${isDriver}`;
 }
-
 console.log(summary());
 
 // Functions
-const years = [1991, 2001, 1969, 2012];
+const years = [1991, 2001, 1969, 2012, 1992, 2002, 2004];
 const ages = [];
 for (let index in years) {
   let age = 2024 - years[index];
+  if (age % 2 != 0) continue;
   ages.push(age);
 }
 console.log(ages);
