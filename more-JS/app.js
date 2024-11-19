@@ -44,7 +44,7 @@ const jonas = {
   lastName: "Ruhl",
   age: 2024 - 2001,
   job: "teacher",
-  teacher: ["Michael", "Peter", "Steven"],
+  friends: ["Michael", "Peter", "Steven"],
 };
 // Dot notation and Bracket notation
 console.log(jonas.age, jonas["job"]);
@@ -54,3 +54,13 @@ let valueKey = "first";
 console.log(jonas[valueKey + "Name"]);
 valueKey = "last";
 console.log(jonas[valueKey + "Name"]);
+
+//const interest = prompt("What do you want? ");
+//console.log(jonas[interest]);
+
+jonas.location = "Portugal";
+jonas["twitter"] = "@jonas";
+
+console.log(
+  `Jonas has ${jonas.friends.length} friends, and his best friend is ${jonas.friends[0]}`
+);
