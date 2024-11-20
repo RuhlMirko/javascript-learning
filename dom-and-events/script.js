@@ -23,8 +23,11 @@ function check_value() {
     document.querySelector('.number').style.width = '30rem';
     document.querySelector('.number').style.fontSize = '8rem';
     document.querySelector('.number').textContent = secretNumber;
+    score = Number(document.querySelector('.score').textContent);
+    // Sets new high score if there's any
     if (score > highScore) {
-      document.querySelector('.highscore').textContent = score;
+      highScore = score;
+      document.querySelector('.highscore').textContent = highScore;
     }
   } else if (guess > 20 || guess < 0) {
     document.querySelector('h1').textContent =
@@ -56,13 +59,17 @@ function check_value() {
 
 function reset_counter() {
   secretNumber = Math.trunc(Math.random() * 20) + 1;
-  document.querySelector('.highscore').textContent = score;
+  console.log(secretNumber);
   score = 20;
+  // Resets all styles and values to its original state
   document.querySelector('h1').textContent = 'Guess My Number!';
   document.querySelector('.score').textContent = score;
   document.querySelector('.number').textContent = '?';
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.message').textContent = 'Start guessing...';
+  document.querySelector('.number').style.width = '15rem';
+  document.querySelector('.number').style.fontSize = '6rem';
+  document.querySelector('.guess').value = '';
 
   document.querySelector('.check').addEventListener('click', check_value);
 }
