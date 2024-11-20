@@ -11,11 +11,11 @@ const measureKelvin = function () {
   const measurement = {
     type: "temp",
     unit: "celsius",
-    value: prompt("Degrees celsius: "),
+    value: Number(prompt("Degrees celsius: ")),
   };
 
   console.table(measurement);
-  const kelvin = Number(measurement.value) + 273;
+  const kelvin = measurement.value + 273;
   return kelvin;
 };
 console.log(measureKelvin());
