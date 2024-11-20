@@ -9,6 +9,7 @@
 //document.querySelector('.score').textContent = 0;
 
 const secretNumber = Math.trunc(Math.random() * 20) + 1;
+let score = Number(document.querySelector('.score').textContent);
 
 function check_value() {
   const guess = Number(document.querySelector('.guess').value);
@@ -21,12 +22,14 @@ function check_value() {
     document.querySelector('body').style.backgroundColor = 'green';
   } else {
     let diff = Math.abs(secretNumber - guess);
+    score = score - 1;
+    document.querySelector('.score').textContent = score;
     if (diff <= 5) {
-      document.querySelector('.message').textContent = 'Very Warm';
+      document.querySelector('.message').textContent = 'Very Warm 🔥';
     } else if (diff <= 10) {
-      document.querySelector('.message').textContent = 'Warm';
+      document.querySelector('.message').textContent = 'Warm ♨';
     } else {
-      document.querySelector('.message').textContent = 'Very Cold';
+      document.querySelector('.message').textContent = 'Very Cold ❄';
     }
   }
 }
