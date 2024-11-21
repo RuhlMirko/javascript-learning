@@ -49,7 +49,6 @@ function check_value() {
     }
     // Only enters this else statement if the score is 0
     else {
-      score = score - 1;
       document.querySelector('.score').textContent = score;
       document.querySelector('h1').textContent = 'You lost the game! 💥';
       document.querySelector('body').style.backgroundColor = '#b32';
@@ -62,6 +61,11 @@ function reset_counter() {
   console.log(secretNumber);
   score = 20;
   // Resets all styles and values to its original state
+  reset_screen();
+  document.querySelector('.check').addEventListener('click', check_value);
+}
+
+function reset_screen() {
   document.querySelector('h1').textContent = 'Guess My Number!';
   document.querySelector('.score').textContent = score;
   document.querySelector('.number').textContent = '?';
@@ -70,8 +74,6 @@ function reset_counter() {
   document.querySelector('.number').style.width = '15rem';
   document.querySelector('.number').style.fontSize = '6rem';
   document.querySelector('.guess').value = '';
-
-  document.querySelector('.check').addEventListener('click', check_value);
 }
 
 document.querySelector('.check').addEventListener('click', check_value);
