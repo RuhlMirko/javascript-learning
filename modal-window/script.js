@@ -5,14 +5,13 @@ const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.close-modal');
 const btnShowModal = document.querySelectorAll('.show-modal');
 
-console.log(btnShowModal);
-
 function remove_hidden_class() {
   console.log('Button clicked');
   modal.classList.remove('hidden');
   overlay.classList.remove('hidden');
 
   btnCloseModal.addEventListener('click', add_hidden_class);
+  overlay.addEventListener('click', add_hidden_class);
 }
 
 function add_hidden_class() {
