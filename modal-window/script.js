@@ -12,6 +12,12 @@ function remove_hidden_class() {
 
   btnCloseModal.addEventListener('click', add_hidden_class);
   overlay.addEventListener('click', add_hidden_class);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      add_hidden_class();
+    }
+  });
 }
 
 function add_hidden_class() {
