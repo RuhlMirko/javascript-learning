@@ -23,22 +23,30 @@ function roll_dice() {
   diceImg.src = `dice-${dice}.png`;
 
   if (dice === 1) {
-    p1.classList.toggle('player--active');
-    p2.classList.toggle('player--active');
-
-    document.getElementById(`score--${active_player}`).textContent =
-      currentScore;
-
+    document.getElementById(`score--${active_player}`).textContent = 0;
     currentScore = 0;
     document.getElementById(`current--${active_player}`).textContent =
       currentScore;
+    // Toggles to next player
     active_player = active_player == 0 ? 1 : 0;
+    p1.classList.toggle('player--active');
+    p2.classList.toggle('player--active');
   } else {
     currentScore += dice;
-    //active_player = p1.classList.contains('player-active') ? 0 : 1;
     document.getElementById(`current--${active_player}`).textContent =
       currentScore;
   }
 }
 
+function hold_score() {
+  document.getElementById(`score--${active_player}`).textContent = currentScore;
+  currentScore = 0;
+  document.getElementById(`current--${active_player}`).textContent =
+    currentScore;
+  active_player = active_player == 0 ? 1 : 0;
+  p1.classList.toggle('player--active');
+  p2.classList.toggle('player--active');
+}
+
 rollBtn.addEventListener('click', roll_dice);
+holdBtn.addEventListener('click', hold_score);
