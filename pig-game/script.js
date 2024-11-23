@@ -92,3 +92,5 @@ function reset_game() {
 rollBtn.addEventListener('click', roll_dice);
 holdBtn.addEventListener('click', hold_score);
 newBtn.addEventListener('click', reset_game);
+
+// test
