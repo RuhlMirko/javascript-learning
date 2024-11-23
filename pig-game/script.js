@@ -17,52 +17,59 @@ let currentScore = 0;
 let active_player = 0;
 
 let winning_score = 20;
+let game_is_on = true;
 
 function roll_dice() {
-  const dice = Math.trunc(Math.random() * 6) + 1;
-  diceImg.src = `dice-${dice}.png`;
+  if (game_is_on) {
+    const dice = Math.trunc(Math.random() * 6) + 1;
+    diceImg.src = `dice-${dice}.png`;
 
-  if (dice === 1) {
-    // Resets the current and total score
-    if (active_player == 0) {
-      score_p1 = 0;
-    } else if (active_player == 1) {
-      score_p2 = 0;
+    if (dice === 1) {
+      // Resets the current and total score
+      if (active_player == 0) {
+        score_p1 = 0;
+      } else if (active_player == 1) {
+        score_p2 = 0;
+      }
+      document.getElementById(`score--${active_player}`).textContent = 0;
+      currentScore = 0;
+      document.getElementById(`current--${active_player}`).textContent =
+        currentScore;
+
+      // Toggles to next player
+      active_player = active_player == 0 ? 1 : 0;
+      p1.classList.toggle('player--active');
+      p2.classList.toggle('player--active');
+    } else {
+      currentScore += dice;
+      document.getElementById(`current--${active_player}`).textContent =
+        currentScore;
     }
-    document.getElementById(`score--${active_player}`).textContent = 0;
-    currentScore = 0;
-    document.getElementById(`current--${active_player}`).textContent =
-      currentScore;
-
-    // Toggles to next player
-    active_player = active_player == 0 ? 1 : 0;
-    p1.classList.toggle('player--active');
-    p2.classList.toggle('player--active');
-  } else {
-    currentScore += dice;
-    document.getElementById(`current--${active_player}`).textContent =
-      currentScore;
   }
 }
 
 function hold_score() {
-  if (active_player == 0) {
-    score_p1 += currentScore;
-    document.getElementById(`score--${active_player}`).textContent = score_p1;
-    // Winning functionality
-    if (score_p1 >= winning_score) {
-      p1.classList.add('player--winner');
-    } else {
-      switch_player();
-    }
-  } else if (active_player == 1) {
-    score_p2 += currentScore;
-    document.getElementById(`score--${active_player}`).textContent = score_p2;
-    // Winning functionality
-    if (score_p2 >= winning_score) {
-      p2.classList.add('player--winner');
-    } else {
-      switch_player();
+  if (game_is_on) {
+    if (active_player == 0) {
+      score_p1 += currentScore;
+      document.getElementById(`score--${active_player}`).textContent = score_p1;
+      // Winning functionality
+      if (score_p1 >= winning_score) {
+        p1.classList.add('player--winner');
+        game_is_on = false;
+      } else {
+        switch_player();
+      }
+    } else if (active_player == 1) {
+      score_p2 += currentScore;
+      document.getElementById(`score--${active_player}`).textContent = score_p2;
+      // Winning functionality
+      if (score_p2 >= winning_score) {
+        p2.classList.add('player--winner');
+        game_is_on = false;
+      } else {
+        switch_player();
+      }
     }
   }
 }
