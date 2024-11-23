@@ -16,7 +16,7 @@ let diceImg = document.querySelector('img');
 let currentScore = 0;
 let active_player = 0;
 
-let winning_score = 20;
+let winning_score = 50;
 let game_is_on = true;
 
 function roll_dice() {
@@ -84,10 +84,13 @@ function switch_player() {
 }
 
 function reset_game() {
+  game_is_on = true;
   currentScore = 0;
   active_player = 0;
   score_p1 = 0;
   score_p2 = 0;
+  document.getElementById(`current--1`).textContent = currentScore;
+  document.getElementById(`current--0`).textContent = currentScore;
   document.getElementById(`score--0`).textContent = score_p1;
   document.getElementById(`score--1`).textContent = score_p2;
   p1.classList.add('player--active');
