@@ -5,10 +5,9 @@ const rollBtn = document.querySelector('.btn--roll');
 const holdBtn = document.querySelector('.btn--hold');
 const newBtn = document.querySelector('.btn--new');
 
-let score_p1 = document.getElementById('score--0');
-let score_p2 = document.getElementById('score--1');
-score_p1.textContent = 0;
-score_p2.textContent = 0;
+let score_p1 = (document.getElementById('score--0').textContent = 0);
+let score_p2 = (document.getElementById('score--1').textContent = 0);
+console.log(score_p1, score_p2);
 
 const p1 = document.querySelector('.player--0');
 const p2 = document.querySelector('.player--1');
@@ -27,6 +26,12 @@ function roll_dice() {
     currentScore = 0;
     document.getElementById(`current--${active_player}`).textContent =
       currentScore;
+    if (active_player == 0) {
+      score_p1 = 0;
+    } else if (active_player == 1) {
+      score_p2 = 0;
+    }
+
     // Toggles to next player
     active_player = active_player == 0 ? 1 : 0;
     p1.classList.toggle('player--active');
@@ -39,7 +44,14 @@ function roll_dice() {
 }
 
 function hold_score() {
-  document.getElementById(`score--${active_player}`).textContent = currentScore;
+  if (active_player == 0) {
+    score_p1 += currentScore;
+    document.getElementById(`score--${active_player}`).textContent = score_p1;
+  } else if (active_player == 1) {
+    score_p2 += currentScore;
+    document.getElementById(`score--${active_player}`).textContent = score_p2;
+  }
+
   currentScore = 0;
   document.getElementById(`current--${active_player}`).textContent =
     currentScore;
