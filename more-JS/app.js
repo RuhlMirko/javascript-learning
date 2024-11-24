@@ -99,3 +99,22 @@ if (ages.length == 4) {
 
 console.log(new_var);
 //console.log(new_const);
+
+const a = "Mirko";
+
+function first() {
+  const b = "Ruhl";
+  second();
+
+  function second() {
+    const c = "Programming";
+    third();
+
+    function third() {
+      const d = 2001;
+      console.log(a + b + c + d);
+    }
+  }
+}
+
+first();
