@@ -215,3 +215,16 @@ const jonas1 = {
 // var firstName = "Default";
 jonas1.greet();
 jonas1.calcAge();
+
+// Args
+const addExpr1 = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr1(2, 5);
+var addArrow1 = (a, b) => {
+  // args doesnt exist in arrow functions
+  //console.log(arguments);
+  return a + b;
+};
+addArrow1(2, 5);
