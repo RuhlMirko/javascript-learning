@@ -118,3 +118,26 @@ function first() {
 }
 
 first();
+
+// Hoisting
+console.log(me);
+//console.log(job);
+//console.log(year);
+var me = "Mirko";
+let job = "programmer";
+const year = 2001;
+
+// Functions
+console.log(addDecl(2, 3));
+//console.log(addExpr(2, 3));
+//console.log(addArrow(2, 3));
+
+function addDecl(a, b) {
+  return a + b;
+}
+const addExpr = function (a, b) {
+  return a + b;
+};
+const addArrow = (a, b) => a + b;
+
+// Example
