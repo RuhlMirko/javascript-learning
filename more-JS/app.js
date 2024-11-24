@@ -171,6 +171,7 @@ const calcAgeArrow = (birthYear) => {
 calcAgeArrow(year - 2);
 
 // Objects
+/*
 const jonas1 = {
   year: 1991,
   calcAge: function () {
@@ -184,4 +185,33 @@ const matilda = {
 matilda.calcAge = jonas1.calcAge;
 matilda.calcAge();
 
-const extracted_function = jonas1.calcAge;
+const extracted_function = jonas1.calcAge;*/
+
+const jonas1 = {
+  firstName: "Jonas",
+  year: 1991,
+  calcAge: function () {
+    console.log(2024 - this.year);
+
+    // Using variables to store <this> and use in a child function
+    /*
+    const self = this;
+    const isMillenial = function () {
+      console.log(self.year >= 1980 && self.year <= 1996);
+    };
+    isMillenial();
+    */
+
+    // Arrow function Inherits the <this> keyword
+    const isMillenial = () => {
+      console.log(this);
+      console.log(this.year >= 1980 && this.year <= 1996);
+    };
+    isMillenial();
+  },
+
+  greet: () => console.log(`Hey ${this.firstName}`),
+};
+// var firstName = "Default";
+jonas1.greet();
+jonas1.calcAge();
