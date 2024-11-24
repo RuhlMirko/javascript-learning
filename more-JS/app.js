@@ -92,9 +92,10 @@ for (let index in years) {
 console.log(ages);
 
 if (ages.length == 4) {
-  let new_var = 2000;
+  let new_let = 2000;
   const new_const = 2000;
+  var new_var = 2020;
 }
 
-//console.log(new_var);
+console.log(new_var);
 //console.log(new_const);
