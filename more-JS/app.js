@@ -157,3 +157,31 @@ console.log(y === window.y);
 console.log(z === window.z);
 
 // This Keyword
+console.log(this);
+
+const calcAge1 = function (birthYear) {
+  console.log(2024 - birthYear);
+  console.log(this);
+};
+calcAge1(year);
+const calcAgeArrow = (birthYear) => {
+  console.log(2024 - birthYear);
+  console.log(this);
+};
+calcAgeArrow(year - 2);
+
+// Objects
+const jonas1 = {
+  year: 1991,
+  calcAge: function () {
+    console.log(2024 - this.year);
+  },
+};
+jonas1.calcAge();
+const matilda = {
+  year: 2004,
+};
+matilda.calcAge = jonas1.calcAge;
+matilda.calcAge();
+
+const extracted_function = jonas1.calcAge;
