@@ -141,3 +141,10 @@ const addExpr = function (a, b) {
 const addArrow = (a, b) => a + b;
 
 // Example
+
+//if (!numProduct) deleteShopCart();
+let numProduct = 10;
+//var numProduct = 10;
+function deleteShopCart() {
+  console.log("All products deleted");
+}
