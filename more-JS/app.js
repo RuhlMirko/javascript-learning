@@ -90,3 +90,11 @@ for (let index in years) {
   ages.push(age);
 }
 console.log(ages);
+
+if (ages.length == 4) {
+  let new_var = 2000;
+  const new_const = 2000;
+}
+
+//console.log(new_var);
+//console.log(new_const);
