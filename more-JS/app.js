@@ -228,3 +228,20 @@ var addArrow1 = (a, b) => {
   return a + b;
 };
 addArrow1(2, 5);
+
+console.log("Primitives vs Objects");
+let user_age = 30;
+let old_age = user_age;
+user_age = 31;
+console.log(user_age);
+console.log(old_age);
+
+const myself = {
+  name: "Jonas",
+  person_age: 30,
+};
+
+const friend = myself;
+friend.person_age = 27;
+console.log("Frien", friend);
+console.log("Me", myself);
