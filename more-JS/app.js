@@ -269,7 +269,12 @@ const jessica2 = {
   firstName: "Jessica",
   lastName: "Davis",
   age: 27,
+  family: ["Alice", "Bob"],
 };
 const marriedJessica2 = Object.assign({}, jessica2);
 marriedJessica2.lastName = "Williams";
+
+marriedJessica2.family.push("Mary");
+marriedJessica2.family.push("John");
+
 console.log(jessica2, marriedJessica2);
