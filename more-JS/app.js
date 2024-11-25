@@ -240,8 +240,36 @@ const myself = {
   name: "Jonas",
   person_age: 30,
 };
-
+// No copia la variable, solo vincula la referencia
+/*
 const friend = myself;
 friend.person_age = 27;
+
 console.log("Frien", friend);
 console.log("Me", myself);
+*/
+
+// Primitive types
+let lastName = "Williams";
+let oldLastName = lastName;
+lastName = "Davis";
+
+// Reference types
+let jessica = {
+  firstName: "Jessica",
+  lastName: "Davis",
+  age: 27,
+};
+const marriedJessica = jessica;
+marriedJessica.age = 29;
+console.log(marriedJessica, jessica);
+
+// Copy objects
+const jessica2 = {
+  firstName: "Jessica",
+  lastName: "Davis",
+  age: 27,
+};
+const marriedJessica2 = Object.assign({}, jessica2);
+marriedJessica2.lastName = "Williams";
+console.log(jessica2, marriedJessica2);
