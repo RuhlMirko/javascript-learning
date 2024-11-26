@@ -60,6 +60,19 @@ const restaurant = {
   },
 };
 
+// Short circuiting
+console.log(3 || 'Jonas');
+console.log(0 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+console.log(undefined || 0 || '');
+// Long way
+const num_guests = restaurant.numGuests ? restaurant.numGuests : 0;
+console.log(num_guests);
+// Short way
+const num_guests1 = restaurant.numGuests || 1;
+console.log(num_guests1);
 // Spread operator <...>
 /*
 const arr = [7, 8, 9];
@@ -71,6 +84,8 @@ console.log(...goodArr);
 const newMenu = [...restaurant.mainMenu, 'Noqui'];
 console.log(newMenu);
 */
+/*
+//////////////////////////////////////////////////
 //Copy Arrays values into another array
 const mainMenuCopy = [...restaurant.mainMenu];
 const foodMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
@@ -88,7 +103,8 @@ restaurantCopy.restau_name = 'Ristorante Roma';
 restaurantCopy.location = 'Calzadilla 646, Tigre, Buenos Aires';
 console.log(restaurant);
 console.log(restaurantCopy);
-
+/*
+//////////////////////////////////////////////////
 // Rest pattern
 const [a1, b1, ...others] = [1, 2, 3, 4, 5];
 console.log(a1, b1, others);
@@ -113,19 +129,22 @@ add(...x); // Spreading array to pass as *args
 restaurant.orderPizza('Mushrooms', 'onion', 'olives', 'pepperoni');
 const italianIngredients = ['Flour', 'Cheese', 'Oregano', 'Pepperoni'];
 restaurant.orderPizza(...italianIngredients); // Spreading array to pass as *args in objects
-
+/*
+//////////////////////////////////////////////////
+// Functions inside objects
 restaurant.orderDelivery({
   time: '22:30',
   address: 'Via del Sole, 21',
   mainIndex: 2,
   starterIndex: 2,
 });
-
 restaurant.orderDelivery({
   address: 'Calzadilla, 636',
   mainIndex: 0,
 });
 
+/*
+//////////////////////////////////////////////////
 // Getting variable names
 const { restau_name: dish_name, openingHours, categories } = restaurant;
 console.log(dish_name, openingHours, categories);
