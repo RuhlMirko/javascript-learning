@@ -59,20 +59,33 @@ const restaurant = {
     },
   },
 };
-
+console.log('---OR---');
 // Short circuiting
-console.log(3 || 'Jonas');
-console.log(0 || 'Jonas');
-console.log('' || 'Jonas');
+console.log(3 || 'Truthy');
+console.log(0 || 'Truthy');
+console.log('' || 'Truthy');
 console.log(true || 0);
 console.log(undefined || null);
-console.log(undefined || 0 || '');
+console.log(undefined || 0 || '' || 'Truthy'); // Ignores falsy values
 // Long way
 const num_guests = restaurant.numGuests ? restaurant.numGuests : 0;
 console.log(num_guests);
 // Short way
 const num_guests1 = restaurant.numGuests || 1;
 console.log(num_guests1);
+
+console.log('---AND---');
+
+// Oposite of OR
+console.log(2 && 'Truthy' && null);
+console.log(2 && 'Truthy' && undefined && 0 && ''); // Ignores truthy values
+// Long way
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('Mushrooms', 'spinach');
+  console.log('Pizza ordered');
+}
+// Short way
+restaurant.orderPizza && restaurant.orderPizza('mushroom', 'Albahaca');
 // Spread operator <...>
 /*
 const arr = [7, 8, 9];
