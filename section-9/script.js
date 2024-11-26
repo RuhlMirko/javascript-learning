@@ -6,7 +6,7 @@ const flights =
 
 // Data needed for first part of the section
 const restaurant = {
-  name: 'Classico Italiano',
+  dish_name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
@@ -32,6 +32,31 @@ const restaurant = {
   },
 };
 
+// Getting variable names
+const { dish_name, openingHours, categories } = restaurant;
+console.log(dish_name, openingHours, categories);
+// Renaming Objects variable names
+const {
+  dish_name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+// Setting default values
+const { menu = ['undefined', 'default'], starterMenu: starters = [] } =
+  restaurant;
+console.log(menu, starters);
+// Switching variables values
+let a = 111;
+let b = 999;
+console.log(a, b);
+const obj = { a: 23, b: 7, c: 14 };
+
+({ a, b } = obj); // Only works if wrapped in parenthesis
+console.log(a, b);
+
+/*
+//////////////////////////////////////////////////
 // Long way
 const arr = [2, 3, 4, 5, 6, 7];
 const a = arr[0];
@@ -56,6 +81,9 @@ const temp = main;
 main = secondary;
 secondary = temp;
 */
+/*
+//////////////////////////////////////
+
 // Short way
 [main, secondary] = [secondary, main];
 console.log(main, secondary);
@@ -72,3 +100,4 @@ console.log(i, j, k);
 // Default values
 const [p, q = 1, r = 'default'] = [8, 9];
 console.log(p, q, r);
+*/
