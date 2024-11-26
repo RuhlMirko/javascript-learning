@@ -49,6 +49,20 @@ const restaurant = {
   },
 };
 
+// Spread operator <...>
+const arr = [7, 8, 9];
+const badArr = [1, 2, 3, arr[0], arr[1], arr[2]];
+const goodArr = [1, 2, 4, ...arr];
+console.log(badArr);
+console.log(goodArr);
+console.log(...goodArr);
+const newMenu = [...restaurant.mainMenu, 'Noqui'];
+console.log(newMenu);
+//Copy Arrays values into another array
+const mainMenuCopy = [...restaurant.mainMenu];
+const foodMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(foodMenu);
+
 restaurant.orderDelivery({
   time: '22:30',
   address: 'Via del Sole, 21',
