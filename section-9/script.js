@@ -6,7 +6,7 @@ const flights =
 
 // Data needed for first part of the section
 const restaurant = {
-  dish_name: 'Classico Italiano',
+  restau_name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: [
@@ -33,6 +33,12 @@ const restaurant = {
     output = `Starter chosen: ${this.starterMenu[starterIndex]}, Main dish: ${this.mainMenu[mainIndex]}`;
     console.log(output);
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
   openingHours: {
     thu: {
       open: 12,
@@ -50,6 +56,7 @@ const restaurant = {
 };
 
 // Spread operator <...>
+/*
 const arr = [7, 8, 9];
 const badArr = [1, 2, 3, arr[0], arr[1], arr[2]];
 const goodArr = [1, 2, 4, ...arr];
@@ -58,10 +65,24 @@ console.log(goodArr);
 console.log(...goodArr);
 const newMenu = [...restaurant.mainMenu, 'Noqui'];
 console.log(newMenu);
+*/
 //Copy Arrays values into another array
 const mainMenuCopy = [...restaurant.mainMenu];
 const foodMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
 console.log(foodMenu);
+const str = 'Jonas';
+const letters = [...str, ' ', 'S.'];
+console.log(letters);
+// Using spread operator as argument
+const ingredients = ['Cheese', 'Flour', 'Oregano'];
+restaurant.orderPasta(...ingredients);
+// Make copies of object without using reference
+const newRest = { foundedIn: 1980, ...restaurant, founder: 'Guiseppe' };
+const restaurantCopy = { ...restaurant };
+restaurantCopy.restau_name = 'Ristorante Roma';
+restaurantCopy.location = 'Calzadilla 646, Tigre, Buenos Aires';
+console.log(restaurant);
+console.log(restaurantCopy);
 
 restaurant.orderDelivery({
   time: '22:30',
@@ -76,11 +97,11 @@ restaurant.orderDelivery({
 });
 
 // Getting variable names
-const { dish_name, openingHours, categories } = restaurant;
+const { restau_name: dish_name, openingHours, categories } = restaurant;
 console.log(dish_name, openingHours, categories);
 // Renaming Objects variable names
 const {
-  dish_name: restaurantName,
+  restau_name: restaurantName,
   openingHours: hours,
   categories: tags,
 } = restaurant;
