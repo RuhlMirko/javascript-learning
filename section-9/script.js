@@ -109,7 +109,10 @@ add(2, 3);
 add(5, 3, 7, 2);
 add(8, 2, 5, 3, 2, 1, 4);
 const x = [23, 51, 17];
-add(...x);
+add(...x); // Spreading array to pass as *args
+restaurant.orderPizza('Mushrooms', 'onion', 'olives', 'pepperoni');
+const italianIngredients = ['Flour', 'Cheese', 'Oregano', 'Pepperoni'];
+restaurant.orderPizza(...italianIngredients); // Spreading array to pass as *args in objects
 
 restaurant.orderDelivery({
   time: '22:30',
