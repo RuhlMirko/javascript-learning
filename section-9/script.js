@@ -29,11 +29,29 @@ const restaurant = {
 };
 
 // Long way
-const arr = [2, 3, 4];
+const arr = [2, 3, 4, 5, 6, 7];
 const a = arr[0];
 const b = arr[1];
 const c = arr[2];
 // Short way
 const [x, y, z] = arr;
+
 console.log(a, b, c);
 console.log(x, y, z);
+
+// Skipping elements
+const [first, , second, , , third] = arr;
+console.log(first, second, third);
+
+// Switching values
+let [main, , secondary] = restaurant.categories;
+console.log(main, secondary);
+// Long way
+/*
+const temp = main;
+main = secondary;
+secondary = temp;
+*/
+// Short way
+[main, secondary] = [secondary, main];
+console.log(main, secondary);
