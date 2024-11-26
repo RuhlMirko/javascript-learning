@@ -9,7 +9,13 @@ const restaurant = {
   dish_name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  starterMenu: [
+    'Focaccia',
+    'Bruschetta',
+    'Garlic Bread',
+    'Caprese Salad',
+    'No starter',
+  ],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
   order: function (starterIndex, mainIndex) {
@@ -17,9 +23,9 @@ const restaurant = {
   },
 
   orderDelivery: function ({
-    starterIndex = 'No starter',
-    mainIndex,
-    time,
+    starterIndex = 4,
+    mainIndex = 0,
+    time = '00:00',
     address,
   }) {
     let output = `New delivery made at ${time} for ${address} street`;
@@ -48,6 +54,11 @@ restaurant.orderDelivery({
   address: 'Via del Sole, 21',
   mainIndex: 2,
   starterIndex: 2,
+});
+
+restaurant.orderDelivery({
+  address: 'Calzadilla, 636',
+  mainIndex: 0,
 });
 
 // Getting variable names
