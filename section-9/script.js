@@ -12,6 +12,10 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -55,3 +59,7 @@ secondary = temp;
 // Short way
 [main, secondary] = [secondary, main];
 console.log(main, secondary);
+
+// Receive two values from function
+const [starter, mainCourse] = restaurant.order(2, 0);
+console.log(starter, mainCourse);
