@@ -39,6 +39,11 @@ const restaurant = {
       `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
     );
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
   openingHours: {
     thu: {
       open: 12,
@@ -83,6 +88,28 @@ restaurantCopy.restau_name = 'Ristorante Roma';
 restaurantCopy.location = 'Calzadilla 646, Tigre, Buenos Aires';
 console.log(restaurant);
 console.log(restaurantCopy);
+
+// Rest pattern
+const [a1, b1, ...others] = [1, 2, 3, 4, 5];
+console.log(a1, b1, others);
+const [pizza, , rissoto, ...other] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, rissoto, other);
+const { sat: weekend, ...weekdays } = restaurant.openingHours;
+console.log(weekdays, weekend);
+// Using rest for functions
+const add = function (...numbers) {
+  let result = 0;
+  for (let i in numbers) result += numbers[i];
+  console.log(result);
+};
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
+const x = [23, 51, 17];
+add(...x);
 
 restaurant.orderDelivery({
   time: '22:30',
