@@ -16,6 +16,17 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
+  orderDelivery: function ({
+    starterIndex = 'No starter',
+    mainIndex,
+    time,
+    address,
+  }) {
+    let output = `New delivery made at ${time} for ${address} street`;
+    console.log(output);
+    output = `Starter chosen: ${this.starterMenu[starterIndex]}, Main dish: ${this.mainMenu[mainIndex]}`;
+    console.log(output);
+  },
   openingHours: {
     thu: {
       open: 12,
@@ -31,6 +42,13 @@ const restaurant = {
     },
   },
 };
+
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del Sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
 
 // Getting variable names
 const { dish_name, openingHours, categories } = restaurant;
@@ -51,9 +69,13 @@ let a = 111;
 let b = 999;
 console.log(a, b);
 const obj = { a: 23, b: 7, c: 14 };
-
 ({ a, b } = obj); // Only works if wrapped in parenthesis
 console.log(a, b);
+// Nested Objects
+const {
+  fri: { open: open_hour, close },
+} = openingHours;
+console.log(`Opening: ${open_hour}, Close: ${close}`);
 
 /*
 //////////////////////////////////////////////////
