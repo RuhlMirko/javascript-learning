@@ -62,7 +62,7 @@ const restaurant = {
 
 const rest1 = {
   name: 'Capri',
-  numGuest: 20,
+  numGuest: 0,
 };
 const rest2 = {
   name: 'La piazza',
@@ -73,7 +73,13 @@ const rest2 = {
 //rest2.numGuest = rest2.numGuest || 10;
 // Short way
 rest1.numGuest ??= 10;
-rest2.numGuest ||= 10;
+rest2.numGuest ??= 10;
+// Long Way
+//rest1.owner = rest1.owner && 'ANON';
+//rest2.owner = rest2.owner && 'ANON';
+// Short Way
+rest1.owner &&= 'ANON';
+rest2.owner &&= 'ANON';
 
 console.log(rest1);
 console.log(rest2);
