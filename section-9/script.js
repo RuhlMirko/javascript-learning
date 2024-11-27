@@ -8,7 +8,7 @@ const flights =
 
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 const openingHours = {
-  [weekdays[2]]: {
+  [weekdays[3]]: {
     open: 12,
     close: 22,
   },
@@ -65,7 +65,22 @@ const restaurant = {
   },
 };
 
-console.log(restaurant.openingHours);
+// ES2020 optional chaining
+console.log(restaurant.openingHours.mon);
+console.log(restaurant.openingHours.mon?.open);
+for (const day of weekdays) {
+  const open = restaurant.openingHours[day]?.open ?? 'Closed';
+  const close = restaurant.openingHours[day]?.close ?? 'Closed';
+  console.log(day, open, close);
+}
+console.log(restaurant.orderMore?.(0, 1) ?? 'Not Available');
+const users = [
+  {
+    name: 'Jonas',
+    email: 'example@jonas',
+  },
+];
+console.log(users[5]?.name ?? 'User array empty');
 
 /* For of Loop
 ///////////////////////////////////////
