@@ -60,6 +60,22 @@ const restaurant = {
   },
 };
 
+/* For of Loop
+///////////////////////////////////////
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// Long Way
+//for (let i in menu) {
+//  console.log(menu[i]);
+//}
+// Short way
+for (let i of menu) console.log(i);
+// returns an array for each item containing its index and its value
+for (let [i, ent] of menu.entries()) {
+  console.log(`${i + 1}: ${ent}`);
+}
+*/
+/* Short Circuiting part 2
+///////////////////////////////////////
 const rest1 = {
   name: 'Capri',
   numGuest: 0,
@@ -80,23 +96,22 @@ rest2.numGuest ??= 10;
 // Short Way
 rest1.owner &&= 'ANON';
 rest2.owner &&= 'ANON';
-
 console.log(rest1);
 console.log(rest2);
-
-/*
+*/
+/* Nullish values
 //////////////////////////////////////////////////
-// Nullish values
 restaurant.numGuest = 0;
 const guest = restaurant.numGuest || 10;
 // Works with null, undefined, 0 and empty strings
 const goodGuest = restaurant.numGuest ?? 10;
 console.log(guest);
 console.log(goodGuest);
-/*
+*/
+/*  Short circuiting part 1
 //////////////////////////////////////////////////
 console.log('---OR---');
-// Short circuiting
+
 console.log(3 || 'Truthy');
 console.log(0 || 'Truthy');
 console.log('' || 'Truthy');
@@ -122,8 +137,8 @@ if (restaurant.orderPizza) {
 }
 // Short way
 restaurant.orderPizza && restaurant.orderPizza('mushroom', 'Albahaca');
-// Spread operator <...>
-/*
+*/
+/* Spread operator <...>
 const arr = [7, 8, 9];
 const badArr = [1, 2, 3, arr[0], arr[1], arr[2]];
 const goodArr = [1, 2, 4, ...arr];
@@ -133,9 +148,8 @@ console.log(...goodArr);
 const newMenu = [...restaurant.mainMenu, 'Noqui'];
 console.log(newMenu);
 */
-/*
+/* Copy Arrays values into another array
 //////////////////////////////////////////////////
-//Copy Arrays values into another array
 const mainMenuCopy = [...restaurant.mainMenu];
 const foodMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
 console.log(foodMenu);
@@ -152,9 +166,10 @@ restaurantCopy.restau_name = 'Ristorante Roma';
 restaurantCopy.location = 'Calzadilla 646, Tigre, Buenos Aires';
 console.log(restaurant);
 console.log(restaurantCopy);
-/*
+*/
+/* Rest pattern
 //////////////////////////////////////////////////
-// Rest pattern
+// 
 const [a1, b1, ...others] = [1, 2, 3, 4, 5];
 console.log(a1, b1, others);
 const [pizza, , rissoto, ...other] = [
@@ -178,7 +193,8 @@ add(...x); // Spreading array to pass as *args
 restaurant.orderPizza('Mushrooms', 'onion', 'olives', 'pepperoni');
 const italianIngredients = ['Flour', 'Cheese', 'Oregano', 'Pepperoni'];
 restaurant.orderPizza(...italianIngredients); // Spreading array to pass as *args in objects
-/*
+*/
+/* Functions inside objects
 //////////////////////////////////////////////////
 // Functions inside objects
 restaurant.orderDelivery({
@@ -191,8 +207,8 @@ restaurant.orderDelivery({
   address: 'Calzadilla, 636',
   mainIndex: 0,
 });
-
-/*
+*/
+/* Getting variable names of Objects
 //////////////////////////////////////////////////
 // Getting variable names
 const { restau_name: dish_name, openingHours, categories } = restaurant;
@@ -220,8 +236,8 @@ const {
   fri: { open: open_hour, close },
 } = openingHours;
 console.log(`Opening: ${open_hour}, Close: ${close}`);
-
-/*
+*/
+/* Assign array values to variables
 //////////////////////////////////////////////////
 // Long way
 const arr = [2, 3, 4, 5, 6, 7];
@@ -247,7 +263,7 @@ const temp = main;
 main = secondary;
 secondary = temp;
 */
-/*
+/* Switch values of arrays
 //////////////////////////////////////
 
 // Short way
