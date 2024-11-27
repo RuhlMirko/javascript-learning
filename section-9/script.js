@@ -60,6 +60,26 @@ const restaurant = {
   },
 };
 
+const rest1 = {
+  name: 'Capri',
+  numGuest: 20,
+};
+const rest2 = {
+  name: 'La piazza',
+  owner: 'Giovanni',
+};
+// Long Way
+//rest1.numGuest = rest1.numGuest ?? 10;
+//rest2.numGuest = rest2.numGuest || 10;
+// Short way
+rest1.numGuest ??= 10;
+rest2.numGuest ||= 10;
+
+console.log(rest1);
+console.log(rest2);
+
+/*
+//////////////////////////////////////////////////
 // Nullish values
 restaurant.numGuest = 0;
 const guest = restaurant.numGuest || 10;
