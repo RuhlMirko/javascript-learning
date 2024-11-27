@@ -59,6 +59,16 @@ const restaurant = {
     },
   },
 };
+
+// Nullish values
+restaurant.numGuest = 0;
+const guest = restaurant.numGuest || 10;
+// Works with null, undefined, 0 and empty strings
+const goodGuest = restaurant.numGuest ?? 10;
+console.log(guest);
+console.log(goodGuest);
+/*
+//////////////////////////////////////////////////
 console.log('---OR---');
 // Short circuiting
 console.log(3 || 'Truthy');
