@@ -73,9 +73,10 @@ for (const day of Object.keys(openingHours)) {
 }
 console.log(output);
 //Accesing properties values
+output = '';
 console.log(Object.values(openingHours));
-for (const hour of Object.values(openingHours)) {
-  output += `/${hour} `;
+for (const [day, { open, close }] of Object.entries(openingHours)) {
+  output += `Day: ${day} from ${open}hs to ${close}hs - `;
   console.log();
 }
 console.log(output);
