@@ -73,6 +73,12 @@ for (const day of Object.keys(openingHours)) {
 }
 console.log(output);
 //Accesing properties values
+console.log(Object.values(openingHours));
+for (const hour of Object.values(openingHours)) {
+  output += `/${hour} `;
+  console.log();
+}
+console.log(output);
 
 /* Optional chaining
 ///////////////////////////////////////
@@ -145,7 +151,7 @@ const goodGuest = restaurant.numGuest ?? 10;
 console.log(guest);
 console.log(goodGuest);
 */
-/*  Short circuiting part 1
+/* Short circuiting part 1
 //////////////////////////////////////////////////
 console.log('---OR---');
 
