@@ -64,6 +64,16 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+
+const openList = Object.keys(openingHours);
+let output = `We are open on ${openList.length} days: `;
+// Accessing key names of objects
+for (const day of Object.keys(openingHours)) {
+  output += `${day} `;
+}
+console.log(output);
+//Accesing properties values
+
 /* Optional chaining
 ///////////////////////////////////////
 // ES2020 optional chaining
