@@ -64,7 +64,8 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
-
+/* Optional chaining
+///////////////////////////////////////
 // ES2020 optional chaining
 console.log(restaurant.openingHours.mon);
 console.log(restaurant.openingHours.mon?.open);
@@ -80,6 +81,10 @@ const users = [
     email: 'example@jonas',
   },
 ];
+// Long way
+//if (users.length > 0) console.log(users[0].name)
+//else console.log('User array empty');
+// Short way
 console.log(users[5]?.name ?? 'User array empty');
 
 /* For of Loop
