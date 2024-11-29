@@ -65,6 +65,8 @@ const restaurant = {
   },
 };
 
+/* Looping objects keys and values
+///////////////////////////////////////
 const openList = Object.keys(openingHours);
 let output = `We are open on ${openList.length} days: `;
 // Accessing key names of objects
@@ -76,11 +78,11 @@ console.log(output);
 output = '';
 console.log(Object.values(openingHours));
 for (const [day, { open, close }] of Object.entries(openingHours)) {
-  output += `Day: ${day} from ${open}hs to ${close}hs - `;
+  output += `On ${day} we open from ${open}hs to ${close}hs - `;
   console.log();
 }
 console.log(output);
-
+*/
 /* Optional chaining
 ///////////////////////////////////////
 // ES2020 optional chaining

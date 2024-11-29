@@ -663,11 +663,12 @@ function printGoals(...playerNames) {
 printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
 printGoals('Davies', 'Kimmich');
 printGoals(...game.scored);
+*/
 
 //console.log(team1 > team2 ? game.team1 : game.team2;)
 team1 > team2 && console.log('Team 1 is more likely to win');
 team1 < team2 && console.log('Team 2 is more likely to win');
-/*
+
 // 1.
 const [players1, players2] = game.players;
 console.log(players1, players2);
@@ -703,7 +704,7 @@ printGoals(...game.scored);
 team1 < team2 && console.log('Team 1 is more likely to win');
 team1 > team2 && console.log('Team 2 is more likely to win');
 
-
+/*
 ///////////////////////////////////////
 // Logical Assignment Operators
 const rest1 = {
