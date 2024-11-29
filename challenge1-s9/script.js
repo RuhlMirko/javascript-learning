@@ -469,7 +469,7 @@ BONUS: Create an object called 'scorers' which contains the names of the players
 
 GOOD LUCK 😀
 */
-
+console.log('Challenge #02');
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -510,6 +510,10 @@ const game = {
     team2: 6.5,
   },
 };
+
+for (let [num, player] of game.scored.entries()) {
+  console.log(`Goal ${num + 1}: ${player} `);
+}
 
 /*
 // 1.
@@ -666,8 +670,10 @@ printGoals(...game.scored);
 */
 
 //console.log(team1 > team2 ? game.team1 : game.team2;)
-team1 > team2 && console.log('Team 1 is more likely to win');
-team1 < team2 && console.log('Team 2 is more likely to win');
+//team1 > team2 && console.log('Team 1 is more likely to win');
+//team1 < team2 && console.log('Team 2 is more likely to win');
+/*
+console.log('Challenge #01');
 
 // 1.
 const [players1, players2] = game.players;
