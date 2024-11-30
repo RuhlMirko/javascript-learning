@@ -510,10 +510,16 @@ const game = {
     team2: 6.5,
   },
 };
-
+// 1
 for (let [num, player] of game.scored.entries()) {
   console.log(`Goal ${num + 1}: ${player} `);
 }
+
+// 2
+const odd_list = Object.values(game.odds);
+let sum = 0;
+for (let item of odd_list) sum += item;
+console.log(sum / odd_list.length);
 
 /*
 // 1.
