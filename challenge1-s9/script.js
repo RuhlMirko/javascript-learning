@@ -521,6 +521,18 @@ let sum = 0;
 for (let item of odd_list) sum += item;
 console.log(sum / odd_list.length);
 
+// 3
+const str_keys = [
+  'victory of Bayern Munich',
+  'draw',
+  'victory of Borrussia Dortmund',
+];
+for (let index in odd_list) {
+  console.log(`Odd of ${str_keys[index]}: ${odd_list[index]}`);
+}
+
+// 4
+
 /*
 // 1.
 for (const [i, player] of game.scored.entries())
