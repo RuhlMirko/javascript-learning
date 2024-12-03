@@ -65,7 +65,37 @@ const restaurant = {
   },
 };
 
-// Sets
+// Maps
+///////////////////////////////////////
+// Setting map values
+const restMap = new Map();
+// Long way
+restMap.set('name', 'Clasico italiano');
+restMap.set(1, 'Firenze, italy');
+restMap.set(2, 'Lisbon, portugal');
+// Short way
+restMap
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'Open for clients')
+  .set(false, 'Closed for clients');
+console.log(restMap);
+// Getting/retrieve map values
+console.log(restMap.get(1), restMap.get('open'), restMap.get(true));
+// Long way
+let time = 8;
+let result = restMap.get(
+  time > restMap.get('open') && time < restMap.get('close')
+);
+console.log(result);
+time = 21;
+result = restMap.get(time > restMap.get('open') && time < restMap.get('close'));
+console.log(result);
+// Short way
+time = 8;
+
+/* Sets
 ///////////////////////////////////////
 const ordersSet = new Set([
   'Pasta',
@@ -86,7 +116,7 @@ for (const order of ordersSet) {
 const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef'];
 const staffPositions = [...new Set(staff)];
 console.log(staffPositions);
-
+*/
 /* Looping objects keys and values
 ///////////////////////////////////////
 const openList = Object.keys(openingHours);
