@@ -92,8 +92,10 @@ console.log(result);
 time = 21;
 result = restMap.get(time > restMap.get('open') && time < restMap.get('close'));
 console.log(result);
-// Short way
-time = 8;
+// Deleting item from map
+let res = restMap.has('categories')
+  ? restMap.delete(2)
+  : console.log('Not available');
 
 /* Sets
 ///////////////////////////////////////
