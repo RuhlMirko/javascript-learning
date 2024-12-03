@@ -532,7 +532,18 @@ for (let index in odd_list) {
 }
 
 // 4
+let scorers = {};
+let player = game.scored[0];
 
+scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+
+console.log(scorers);
+
+/*
+for (const player of game.scored) {
+  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+}
+*/
 /*
 // 1.
 for (const [i, player] of game.scored.entries())
