@@ -96,6 +96,16 @@ console.log(result);
 let res = restMap.has('categories')
   ? restMap.delete(2)
   : console.log('Not available');
+console.log(restMap);
+restMap.clear();
+console.log(restMap);
+// Set arrays as keys
+const newMap = new Map();
+// The get method only receives referencial values, not arrays
+// You need to save the array key to reference it later
+const mapKeyDirection = [1, 2];
+newMap.set(mapKeyDirection, 'Test');
+console.log(newMap.get(mapKeyDirection));
 
 /* Sets
 ///////////////////////////////////////
