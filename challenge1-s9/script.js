@@ -315,7 +315,9 @@ const gameEvents = new Map([
 // 1
 const events = new Set(gameEvents.values());
 console.log(events);
-
+// 2
+events.delete('🔶 Yellow card');
+console.log(events);
 /*
 // 1.
 const events = [...new Set(gameEvents.values())];
