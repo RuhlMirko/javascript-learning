@@ -65,7 +65,31 @@ const restaurant = {
   },
 };
 
-// Maps
+// Maps iterator
+///////////////////////////////////////
+const question = new Map([
+  ['question', 'What is the best programming language?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'Python'],
+  [4, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct'],
+  [false, 'Try again'],
+]);
+
+// Long Way
+console.log(question.get('question'));
+let answer = 2;
+let result =
+  answer === question.get('correct') ? question.get(true) : question.get(false);
+console.log(result);
+answer = 3;
+result =
+  answer === question.get('correct') ? question.get(true) : question.get(false);
+console.log(result);
+
+/* Maps Fundamentals
 ///////////////////////////////////////
 // Setting map values
 const restMap = new Map();
@@ -106,11 +130,10 @@ const newMap = new Map();
 const mapKeyDirection = [1, 2];
 newMap.set(mapKeyDirection, 'Test');
 console.log(newMap.get(mapKeyDirection));
-
 // DOM events
 newMap.set(document.querySelector('h1'), 'Heading');
 console.log(newMap);
-
+*/
 /* Sets
 ///////////////////////////////////////
 const ordersSet = new Set([
