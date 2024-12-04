@@ -89,6 +89,10 @@ result =
   answer === question.get('correct') ? question.get(true) : question.get(false);
 console.log(result);
 
+// Convert Object to Map
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
 /* Maps Fundamentals
 ///////////////////////////////////////
 // Setting map values
