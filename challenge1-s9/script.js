@@ -312,6 +312,9 @@ const gameEvents = new Map([
   [80, '⚽️ GOAL'],
   [92, '🔶 Yellow card'],
 ]);
+// 1
+const events = new Set(gameEvents.values());
+console.log(events);
 
 /*
 // 1.
@@ -510,6 +513,7 @@ const game = {
     team2: 6.5,
   },
 };
+/*
 // 1
 for (let [num, player] of game.scored.entries()) {
   console.log(`Goal ${num + 1}: ${player} `);
@@ -538,7 +542,7 @@ let player = game.scored[0];
 scorers[player] ? scorers[player]++ : (scorers[player] = 1);
 
 console.log(scorers);
-
+*/
 /*
 for (const player of game.scored) {
   scorers[player] ? scorers[player]++ : (scorers[player] = 1);

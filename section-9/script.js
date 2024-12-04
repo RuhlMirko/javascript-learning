@@ -78,12 +78,13 @@ const question = new Map([
   [false, 'Try again'],
 ]);
 
+/* Maps Iteration
 // Using keys and values in a for loop
 console.log(question.get('question'));
 for (const [key, value] of question)
   typeof key === 'number' ? console.log(value) : console.log();
 
-/*Long Way
+//Long Way
 console.log('Testing: ');
 let answer = Number(prompt('Your answer'));
 let result =
@@ -92,11 +93,11 @@ console.log(result);
 answer = Number(prompt('Your answer'));
 result =
   answer === question.get('correct') ? question.get(true) : question.get(false);
-console.log(result);*/
-/* Short way
+console.log(result);
+//Short way
 let answer = Number(prompt('Your answer:'));
 console.log(question.get(answer === question.get('correct')));
-*/
+
 // Convert Object to Map
 const hoursMap = new Map(Object.entries(openingHours));
 console.log(hoursMap);
@@ -106,7 +107,7 @@ console.log([...question]);
 console.log(question.entries()); // Returns entries
 console.log([...question.keys()]); // returns keys as array
 console.log([...question.values()]); // Returns values as array
-
+*/
 /* Maps Fundamentals
 ///////////////////////////////////////
 // Setting map values
