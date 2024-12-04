@@ -78,8 +78,12 @@ const question = new Map([
   [false, 'Try again'],
 ]);
 
-// Long Way
+// Using keys and values in a for loop
 console.log(question.get('question'));
+for (const [key, value] of question)
+  typeof key === 'number' ? console.log(value) : console.log();
+// Long Way
+console.log('Testing: ');
 let answer = 2;
 let result =
   answer === question.get('correct') ? question.get(true) : question.get(false);
