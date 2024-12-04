@@ -102,6 +102,10 @@ const hoursMap = new Map(Object.entries(openingHours));
 console.log(hoursMap);
 // Convert Map to array
 console.log([...question]);
+// Operator of maps
+console.log(question.entries()); // Returns entries
+console.log([...question.keys()]); // returns keys as array
+console.log([...question.values()]); // Returns values as array
 
 /* Maps Fundamentals
 ///////////////////////////////////////
