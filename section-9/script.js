@@ -107,6 +107,10 @@ const mapKeyDirection = [1, 2];
 newMap.set(mapKeyDirection, 'Test');
 console.log(newMap.get(mapKeyDirection));
 
+// DOM events
+newMap.set(document.querySelector('h1'), 'Heading');
+console.log(newMap);
+
 /* Sets
 ///////////////////////////////////////
 const ordersSet = new Set([
