@@ -318,6 +318,10 @@ console.log(events);
 // 2
 events.delete('🔶 Yellow card');
 console.log(events);
+// 3
+const eventAverage = Math.trunc(90 / gameEvents.size) + 1;
+console.log(`An event happened, on average, every ${eventAverage} minutes`);
+
 /*
 // 1.
 const events = [...new Set(gameEvents.values())];
