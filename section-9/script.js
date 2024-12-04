@@ -82,20 +82,26 @@ const question = new Map([
 console.log(question.get('question'));
 for (const [key, value] of question)
   typeof key === 'number' ? console.log(value) : console.log();
-// Long Way
+
+/*Long Way
 console.log('Testing: ');
-let answer = 2;
+let answer = Number(prompt('Your answer'));
 let result =
   answer === question.get('correct') ? question.get(true) : question.get(false);
 console.log(result);
-answer = 3;
+answer = Number(prompt('Your answer'));
 result =
   answer === question.get('correct') ? question.get(true) : question.get(false);
-console.log(result);
-
+console.log(result);*/
+/* Short way
+let answer = Number(prompt('Your answer:'));
+console.log(question.get(answer === question.get('correct')));
+*/
 // Convert Object to Map
 const hoursMap = new Map(Object.entries(openingHours));
 console.log(hoursMap);
+// Convert Map to array
+console.log([...question]);
 
 /* Maps Fundamentals
 ///////////////////////////////////////
