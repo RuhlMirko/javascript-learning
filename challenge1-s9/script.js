@@ -316,11 +316,14 @@ const gameEvents = new Map([
 const events = new Set(gameEvents.values());
 console.log(events);
 // 2
-events.delete('🔶 Yellow card');
+events.delete(64);
 console.log(events);
 // 3
-const eventAverage = Math.trunc(90 / gameEvents.size) + 1;
-console.log(`An event happened, on average, every ${eventAverage} minutes`);
+console.log(
+  `An event happened, on average, every ${Math.ceil(
+    90 / gameEvents.size
+  )} minutes`
+);
 // 4
 for (const item of gameEvents.entries()) {
   /*
