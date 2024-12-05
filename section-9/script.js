@@ -95,6 +95,20 @@ console.log(airline.slice(4, 8));
 
 console.log(airline.slice(0, airline.indexOf(' ')));
 console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // The plus one gets rid of the space character
+console.log(airline.slice(-2));
+console.log(airline.slice(4, -2));
+const checkMiddleSeat = function (seatNumber) {
+  const seat = seatNumber.slice(-1);
+  console.log(
+    seat === 'B' || seat === 'E'
+      ? 'You got the middle seat 😥'
+      : 'You got lucky 😃'
+  );
+};
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+// ABC DEF , B and E are middle seats
 
 /* Maps Iteration
 // Using keys and values in a for loop
