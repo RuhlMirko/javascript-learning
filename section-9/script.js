@@ -123,6 +123,17 @@ console.log(email === goodEmail);
 const priceARG = '288,97ARS';
 const priceUS = priceARG.replace('ARS', 'US').replace(',', '.');
 console.log(priceARG, priceUS);
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23!';
+console.log(announcement.replace(/door/g, 'gate')); // Using regular expressions to replace all strings
+console.log(announcement.replaceAll('door', 'gate')); // Using replaceAll() to replace all strings
+
+console.log(airline.includes('Portugal'));
+console.log(airline.includes('A320'));
+console.log(airline.startsWith('TA'));
+console.log(
+  airline.startsWith('TAP') && airline.includes('Port') ? airline : 'NA'
+);
 
 /* Maps Iteration
 // Using keys and values in a for loop
