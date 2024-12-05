@@ -86,13 +86,11 @@ console.log(airline.length);
 
 console.log(airline.indexOf('a'));
 console.log(airline.lastIndexOf('a'));
-
 console.log(airline.indexOf('air'));
 console.log(airline.indexOf('AIR'));
 
 console.log(airline.slice(8));
 console.log(airline.slice(4, 8));
-
 console.log(airline.slice(0, airline.indexOf(' ')));
 console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // The plus one gets rid of the space character
 console.log(airline.slice(-2));
@@ -112,11 +110,15 @@ checkMiddleSeat('3E');
 
 console.log(airline.toLowerCase());
 console.log(airline.toUpperCase());
-
 const badName = 'jOnaS';
 const lowerName = badName.toLowerCase();
 const goodName = lowerName[0].toUpperCase() + lowerName.slice(1);
 console.log(goodName);
+
+const email = 'hello@jonas.io';
+const badEmail = '   Hello@jonas.io \n';
+const goodEmail = badEmail.toLowerCase().trim();
+console.log(email === goodEmail);
 
 /* Maps Iteration
 // Using keys and values in a for loop
