@@ -128,12 +128,26 @@ const announcement =
 console.log(announcement.replace(/door/g, 'gate')); // Using regular expressions to replace all strings
 console.log(announcement.replaceAll('door', 'gate')); // Using replaceAll() to replace all strings
 
-console.log(airline.includes('Portugal'));
+// Booleans functions
 console.log(airline.includes('A320'));
 console.log(airline.startsWith('TA'));
+console.log(airline.endsWith('Portugal'));
 console.log(
-  airline.startsWith('TAP') && airline.includes('Port') ? airline : 'NA'
+  airline.startsWith('TAP') && airline.includes('Port') ? true : false
 );
+
+// Practice
+const checkBaggage = function (item) {
+  const baggage = item.toLowerCase();
+  console.log(
+    baggage.includes('gun') || baggage.includes('knife')
+      ? `Contains a banned item`
+      : 'Legal items'
+  );
+};
+checkBaggage('I have a laptop, some foof and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Snacks and a GUN');
 
 /* Maps Iteration
 // Using keys and values in a for loop
