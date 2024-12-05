@@ -321,6 +321,20 @@ console.log(events);
 // 3
 const eventAverage = Math.trunc(90 / gameEvents.size) + 1;
 console.log(`An event happened, on average, every ${eventAverage} minutes`);
+// 4
+for (const item of gameEvents.entries()) {
+  /*
+  if (item[0] < 45) {
+    console.log(`[First half] ${item[0]}: ${item[1]}`);
+  } else {
+    console.log(`Second half: ${item[1]}`);
+  }*/
+  console.log(
+    item[0] < 45
+      ? `[FIRST HALF] ${item[0]}: ${item[1]} `
+      : `[SECOND HALF] ${item[0]}: ${item[1]} `
+  );
+}
 
 /*
 // 1.
