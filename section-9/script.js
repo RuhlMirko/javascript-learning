@@ -120,6 +120,10 @@ const badEmail = '   Hello@jonas.io \n';
 const goodEmail = badEmail.toLowerCase().trim();
 console.log(email === goodEmail);
 
+const priceARG = '288,97ARS';
+const priceUS = priceARG.replace('ARS', 'US').replace(',', '.');
+console.log(priceARG, priceUS);
+
 /* Maps Iteration
 // Using keys and values in a for loop
 console.log(question.get('question'));
