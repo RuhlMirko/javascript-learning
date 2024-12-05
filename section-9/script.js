@@ -76,13 +76,24 @@ const capitalizeName = function (name_item) {
   name_item = name_item.split(' ');
   let new_name = [];
   for (let item of name_item) {
-    let new_item = item.toLowerCase();
-    new_item = new_item[0].toUpperCase() + new_item.slice(1);
-    new_name.push(new_item);
+    new_name.push(item[0].toUpperCase() + item.slice(1).toLowerCase());
   }
   console.log(new_name.join(' '));
 };
 capitalizeName('jessica ann SMITH davis');
+
+// Padding
+const msg = ' Go to gate 23 ';
+console.log(msg.padStart(25, '#').padEnd(35, '/'));
+
+const maskFourDigits = function (pass) {
+  const str = pass + '';
+  const last = str.slice(-4);
+  console.log(last.padStart(str.length, '*'));
+};
+maskFourDigits('45487779');
+maskFourDigits(202125115454);
+
 /* String manipulation
 const airline = 'TAP air Portugal';
 const plane = 'A320';
