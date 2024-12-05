@@ -85,7 +85,6 @@ capitalizeName('jessica ann SMITH davis');
 // Padding
 const msg = ' Go to gate 23 ';
 console.log(msg.padStart(25, '#').padEnd(35, '/'));
-
 const maskFourDigits = function (pass) {
   const str = pass + '';
   const last = str.slice(-4);
@@ -93,6 +92,16 @@ const maskFourDigits = function (pass) {
 };
 maskFourDigits('45487779');
 maskFourDigits(202125115454);
+
+// repeat
+const output = 'Bad weather... All Departues Delayed... ';
+console.log(output.repeat(3));
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'✈'.repeat(n)}`);
+};
+planesInLine(5);
+planesInLine(3);
+planesInLine(7);
 
 /* String manipulation
 const airline = 'TAP air Portugal';
