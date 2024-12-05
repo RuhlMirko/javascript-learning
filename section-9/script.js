@@ -78,6 +78,24 @@ const question = new Map([
   [false, 'Try again'],
 ]);
 
+const airline = 'TAP air Portugal';
+const plane = 'A320';
+
+console.log(plane[2]);
+console.log(airline.length);
+
+console.log(airline.indexOf('a'));
+console.log(airline.lastIndexOf('a'));
+
+console.log(airline.indexOf('air'));
+console.log(airline.indexOf('AIR'));
+
+console.log(airline.slice(8));
+console.log(airline.slice(4, 8));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // The plus one gets rid of the space character
+
 /* Maps Iteration
 // Using keys and values in a for loop
 console.log(question.get('question'));
