@@ -105,10 +105,18 @@ const checkMiddleSeat = function (seatNumber) {
       : 'You got lucky 😃'
   );
 };
+// ABC DEF , B and E are middle seats
 checkMiddleSeat('11B');
 checkMiddleSeat('23C');
 checkMiddleSeat('3E');
-// ABC DEF , B and E are middle seats
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+const badName = 'jOnaS';
+const lowerName = badName.toLowerCase();
+const goodName = lowerName[0].toUpperCase() + lowerName.slice(1);
+console.log(goodName);
 
 /* Maps Iteration
 // Using keys and values in a for loop
