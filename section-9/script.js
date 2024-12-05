@@ -65,19 +65,25 @@ const restaurant = {
   },
 };
 
-// Maps iterator
-///////////////////////////////////////
-const question = new Map([
-  ['question', 'What is the best programming language?'],
-  [1, 'C'],
-  [2, 'Java'],
-  [3, 'Python'],
-  [4, 'JavaScript'],
-  ['correct', 3],
-  [true, 'Correct'],
-  [false, 'Try again'],
-]);
+console.log('a+very+nice+string'.split('+'));
+console.log('a+very+nice+string'.replaceAll('+', ' '));
+const [firstName, ...lastName] = 'Jonas Schmedtmann Doe Marston'.split(' ');
+console.log(firstName, lastName);
+let goodName = ['Mr.', firstName, ...lastName].join(' ');
+console.log(goodName);
 
+const capitalizeName = function (name_item) {
+  name_item = name_item.split(' ');
+  let new_name = [];
+  for (let item of name_item) {
+    let new_item = item.toLowerCase();
+    new_item = new_item[0].toUpperCase() + new_item.slice(1);
+    new_name.push(new_item);
+  }
+  console.log(new_name.join(' '));
+};
+capitalizeName('jessica ann SMITH davis');
+/* String manipulation
 const airline = 'TAP air Portugal';
 const plane = 'A320';
 
@@ -148,8 +154,20 @@ const checkBaggage = function (item) {
 checkBaggage('I have a laptop, some foof and a pocket Knife');
 checkBaggage('Socks and camera');
 checkBaggage('Snacks and a GUN');
-
+*/
 /* Maps Iteration
+// Maps iterator
+///////////////////////////////////////
+const question = new Map([
+  ['question', 'What is the best programming language?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'Python'],
+  [4, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct'],
+  [false, 'Try again'],
+]);
 // Using keys and values in a for loop
 console.log(question.get('question'));
 for (const [key, value] of question)
