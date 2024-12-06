@@ -17,6 +17,13 @@ transformer('programmed to work', oneWord);
 console.log(upperFirst('heLLO World programmed'));
 //console.log(oneWord('Hello world, programmed to work and not to feel'));
 
+const greet = function () {
+  console.log('👋');
+};
+document.body.addEventListener('click', greet);
+const nameList = ['Jonas', 'Mirko', 'Adam'];
+nameList.forEach(greet);
+
 /* Functions referencial and primitives values
 const flight = 'LH541';
 const jonas = {
