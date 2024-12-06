@@ -107,11 +107,13 @@ document.body.append(document.createElement('button'));
 
 function clicked() {
   const text_values = document.querySelector('textarea').value.split('\n');
-  for (let text of text_values) {
+  for (const [index, text] of text_values.entries()) {
     let new_text = text.toLowerCase().split('_');
     let first_Camel = new_text[1][0].toUpperCase();
     let restCamel = new_text[1].slice(1);
-    console.log(new_text[0] + first_Camel + restCamel);
+
+    const output = new_text[0] + first_Camel + restCamel;
+    console.log(output.padEnd(20) + `${'✅'.repeat(index + 1)}`);
   }
 }
 
