@@ -65,6 +65,7 @@ const restaurant = {
   },
 };
 
+/* String Operators
 console.log('a+very+nice+string'.split('+'));
 console.log('a+very+nice+string'.replaceAll('+', ' '));
 const [firstName, ...lastName] = 'Jonas Schmedtmann Doe Marston'.split(' ');
@@ -102,7 +103,7 @@ const planesInLine = function (n) {
 planesInLine(5);
 planesInLine(3);
 planesInLine(7);
-
+*/
 /* String manipulation
 const airline = 'TAP air Portugal';
 const plane = 'A320';

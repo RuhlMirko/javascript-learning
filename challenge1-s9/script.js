@@ -80,9 +80,9 @@ The input will come from a textarea inserted into the DOM (see code below), and 
 
 THIS TEST DATA (pasted to textarea)
 underscore_case
- first_name
+first_name
 Some_Variable 
-  calculate_AGE
+calculate_AGE
 delayed_departure
 
 SHOULD PRODUCE THIS OUTPUT (5 separate console.log outputs)
@@ -102,6 +102,20 @@ Afterwards, test with your own test data!
 GOOD LUCK 😀
 */
 
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+function clicked() {
+  const text_values = document.querySelector('textarea').value.split('\n');
+  for (let text of text_values) {
+    let new_text = text.toLowerCase().split('_');
+    let first_Camel = new_text[1][0].toUpperCase();
+    let restCamel = new_text[1].slice(1);
+    console.log(new_text[0] + first_Camel + restCamel);
+  }
+}
+
+document.querySelector('button').addEventListener('click', clicked);
 /*
 document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
@@ -312,6 +326,7 @@ const gameEvents = new Map([
   [80, '⚽️ GOAL'],
   [92, '🔶 Yellow card'],
 ]);
+/*
 // 1
 const events = new Set(gameEvents.values());
 console.log(events);
@@ -326,19 +341,19 @@ console.log(
 );
 // 4
 for (const item of gameEvents.entries()) {
-  /*
+  
   if (item[0] < 45) {
     console.log(`[First half] ${item[0]}: ${item[1]}`);
   } else {
     console.log(`Second half: ${item[1]}`);
-  }*/
+  }
   console.log(
     item[0] < 45
       ? `[FIRST HALF] ${item[0]}: ${item[1]} `
       : `[SECOND HALF] ${item[0]}: ${item[1]} `
   );
 }
-
+*/
 /*
 // 1.
 const events = [...new Set(gameEvents.values())];
