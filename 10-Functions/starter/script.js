@@ -1,5 +1,34 @@
 'use strict';
 
+const aeroArg = {
+  airline: 'AeroArg',
+  iataCode: 'BA',
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} for ${this.iataCode}${flightNum}.`
+    );
+    this.bookings.push({
+      flight: `${this.iataCode}${flightNum}`,
+      name,
+    });
+  },
+};
+aeroArg.book(244442, 'Mirko');
+aeroArg.book(642312, 'Jonas');
+console.log(aeroArg.bookings);
+
+// call function
+const euroWings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+const book = aeroArg.book;
+//book(23, 'Sarah');
+book.call(euroWings, 23, 'Sarah');
+console.log(euroWings);
+
 /* Returning functions
 const greet = function (str) {
   return function (name) {
