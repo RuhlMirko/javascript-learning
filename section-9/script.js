@@ -14,19 +14,17 @@ const raw_flights = flights.split('+');
 let max_length = 0;
 for (const item of raw_flights) {
   let output = '';
-  const flightDetails = item.split(';');
-  const flightEvent = flightDetails[0];
+  const [event, fromCode, toCode, hour] = item.split(';');
 
-  if (flightEvent.includes('Delayed')) {
-    output += '🔴' + flightEvent.replaceAll('_', ' ');
-  } else {
-    output += flightEvent.replaceAll('_', ' ').trim();
-  }
+  // Building the final output string
+  event.includes('Delayed')
+    ? (output += '🔴' + event.replaceAll('_', ' '))
+    : (output += event.replaceAll('_', ' ').trim());
+  output += ' from ' + fromCode.substring(0, 3).toUpperCase();
+  output += ' to ' + toCode.substring(0, 3).toUpperCase();
+  output += ` (${hour.replace(':', 'h')})`;
 
-  output += ' from ' + flightDetails[1].substring(0, 3).toUpperCase();
-  output += ' to ' + flightDetails[2].substring(0, 3).toUpperCase();
-  output += ` (${flightDetails[3].replace(':', 'h')})`;
-
+  // Adds padding equal to the longest string
   if (output.length > max_length) max_length = output.length;
   console.log(output.padStart(max_length));
 }
