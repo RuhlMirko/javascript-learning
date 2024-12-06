@@ -11,6 +11,7 @@ const flights =
 // String methods exercises
 
 const raw_flights = flights.split('+');
+let max_length = 0;
 for (const item of raw_flights) {
   let output = '';
   const flightDetails = item.split(';');
@@ -25,7 +26,9 @@ for (const item of raw_flights) {
   output += ' from ' + flightDetails[1].substring(0, 3).toUpperCase();
   output += ' to ' + flightDetails[2].substring(0, 3).toUpperCase();
   output += ` (${flightDetails[3].replace(':', 'h')})`;
-  console.log(output);
+
+  if (output.length > max_length) max_length = output.length;
+  console.log(output.padStart(max_length));
 }
 
 // Data needed for first part of the section
