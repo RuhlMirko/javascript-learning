@@ -1,5 +1,6 @@
 'use strict';
 
+/* Returning functions
 const greet = function (str) {
   return function (name) {
     console.log(`${str} ${name}`);
@@ -11,6 +12,10 @@ greetHello('Mirko');
 // Short way
 greet('Hey')('Jonas');
 
+// Challenge
+const greet1 = str => name => console.log(`${str} ${name}`);
+greet1('Hi')('Ruhl');
+*/
 /* Higher order functions
 const oneWord = function (userInput) {
   return userInput.replaceAll(' ', '').toLowerCase();
