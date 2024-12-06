@@ -1,6 +1,17 @@
 'use strict';
 
-// Higher order functions
+const greet = function (str) {
+  return function (name) {
+    console.log(`${str} ${name}`);
+  };
+};
+// Long Way
+const greetHello = greet('Hello');
+greetHello('Mirko');
+// Short way
+greet('Hey')('Jonas');
+
+/* Higher order functions
 const oneWord = function (userInput) {
   return userInput.replaceAll(' ', '').toLowerCase();
 };
@@ -23,7 +34,7 @@ const greet = function () {
 document.body.addEventListener('click', greet);
 const nameList = ['Jonas', 'Mirko', 'Adam'];
 nameList.forEach(greet);
-
+*/
 /* Functions referencial and primitives values
 const flight = 'LH541';
 const jonas = {
