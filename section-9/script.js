@@ -9,7 +9,7 @@ const flights =
 //   🔴 Delayed Arrival from HEL to FAO (12h05)
 //            Departure from FAO to LIS (12h30)
 // String methods exercises
-
+/*
 const raw_flights = flights.split('+');
 let max_length = 0;
 for (const item of raw_flights) {
@@ -28,7 +28,7 @@ for (const item of raw_flights) {
   if (output.length > max_length) max_length = output.length;
   console.log(output.padStart(max_length));
 }
-
+*/
 // Data needed for first part of the section
 
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
