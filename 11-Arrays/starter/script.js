@@ -65,12 +65,6 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // LECTURES
 
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
-
 //const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /*
@@ -115,18 +109,29 @@ console.log(arr[arr.length - 1]); // Old
 console.log(arr.at(-1)); // New
 */
 
-// For each method
+/* For each method
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // Long Way
 /* for (let item of movements) {
   console.log(
     item >= 0 ? `Deposit of ${item}` : `Withdrawal of ${Math.abs(item)}`
   );
-}*/
+}
 // Short way (Cant break of a loop, not even with break nor continue)
-movements.forEach(function (item, index, arr) {
+movements.forEach(function (item, index, entireArr) {
   console.log(`${index}: of [${arr}]`);
   console.log(
     item >= 0 ? `Deposit of ${item}` : `Withdrawal of ${Math.abs(item)}`
   );
+});
+*/
+
+// For each with Maps
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
+currencies.forEach(function (value, key, entireMap) {
+  console.log(key, value);
 });
