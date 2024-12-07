@@ -74,7 +74,8 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
-//slice
+console.log('Slice: ');
+// Slice takes part of the array without modyfing the original one
 let arr = ['a', 'b', 'c', 'd', 'e', 'f'];
 console.log(arr.slice(2));
 console.log(arr.slice(-2));
@@ -82,3 +83,8 @@ console.log(arr.slice(0, 3));
 console.log(arr.slice(1, -2));
 console.log(arr.slice()); // Only use when chaining
 console.log([...arr]); // Use to spread elements
+
+// splice modyifies the original array
+console.log('Splice: ');
+console.log(arr.splice(-2));
+console.log(arr);
