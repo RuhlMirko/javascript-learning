@@ -46,8 +46,7 @@ const bookEW23 = book.bind(euroWings, 23); // Add default parameters to the bind
 bookEW23('John Doe');
 bookEW23('Jane Doe');
 console.log(aeroArg, euroWings, swiss);
-
-//
+/* Functions with event Listeners
 aeroArg.planes = 300;
 aeroArg.buyPlane = function () {
   this.planes++;
@@ -56,6 +55,14 @@ aeroArg.buyPlane = function () {
 document
   .querySelector('.buy')
   .addEventListener('click', aeroArg.buyPlane.bind(aeroArg));
+*/
+
+// Partial aplication
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+// Copy the arrow function when you dont have an object for bind() use null
+const addIVA = addTax.bind(null, 0.21);
+console.log(addIVA(2300));
 
 /* Returning functions
 const greet = function (str) {
