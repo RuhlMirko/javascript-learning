@@ -100,3 +100,8 @@ console.log('Concat: ');
 const fullArr = arr.concat(newArr);
 console.log([...arr, ...newArr]); // Same result
 console.log(fullArr);
+
+// Join doesn't mutate the original array
+console.log('Join: ');
+const joinedArr = fullArr.join(', ');
+console.log(joinedArr);
