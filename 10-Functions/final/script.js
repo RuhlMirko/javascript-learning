@@ -257,8 +257,8 @@ const poll = {
 };
 
 // 2
-const askInput = function () {
-  // 1.1
+const registerNewAnswer = function () {
+  // 1
   const questionText = `${poll.question}\n${poll.options.join(
     '\n'
   )}\n(Write option number)`;
@@ -269,12 +269,21 @@ const askInput = function () {
   } else {
     alert(`Invalid input! Please enter a number between 0 and 3.`);
   }
-  // 1.2
-
-  console.log(poll);
+  displayResults();
 };
 
-document.querySelector('.poll').addEventListener('click', askInput);
+document.querySelector('.poll').addEventListener('click', registerNewAnswer);
+
+const displayResults = function () {
+  let type = prompt('How do you want to display the results?').toLowerCase();
+  if (type === 'array') {
+    console.log(poll.answers);
+  } else if (type === 'string') {
+    alert(`Poll results are ${poll.answers.join(', ')}`);
+  } else {
+    alert('Thank you for your vote!');
+  }
+};
 
 /*
 const poll = {
@@ -308,7 +317,7 @@ const poll = {
       console.log(`Poll results are ${this.answers.join(', ')}`);
     }
   },
-};
+}; 
 
 document
   .querySelector('.poll')
