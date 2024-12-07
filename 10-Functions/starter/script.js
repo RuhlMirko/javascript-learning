@@ -24,11 +24,18 @@ const euroWings = {
   iataCode: 'EW',
   bookings: [],
 };
+const swiss = {
+  airline: 'Swiss Air lines',
+  iataCode: 'LX',
+  bookings: [],
+};
 const book = aeroArg.book;
-//book(23, 'Sarah');
 book.call(euroWings, 23, 'Sarah');
-console.log(euroWings);
-
+book.call(swiss, 583, 'Mary Cooper');
+const newFlight = [460, 'Jack Marston'];
+book.apply(swiss, newFlight); // Old version
+book.call(swiss, ...newFlight); // Newer version
+console.log(euroWings, swiss);
 /* Returning functions
 const greet = function (str) {
   return function (name) {
