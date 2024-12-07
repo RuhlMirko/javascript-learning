@@ -1,12 +1,27 @@
 'use strict';
 
-// anonymus functions (Inmediatly Invoked Function Expression) or IIFE
+// Closures
+
+const secureBooking = function () {
+  let passengerCount = 0;
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+
+booker();
+booker();
+
+/* Anonymus functions (Inmediatly Invoked Function Expression) or IIFE
 (function () {
   console.log('Run this time');
   const privateNum = 34;
 })();
 (() => console.log('Never run again'))();
-
+*/
 /* Inherit fucntions from objects
 const aeroArg = {
   airline: 'AeroArg',
