@@ -256,12 +256,25 @@ const poll = {
   answers: new Array(4).fill(0),
 };
 
-let output = poll.question;
-for (const item of poll.options) {
-  output += `\n${item}`;
-}
-output += `\n(Write option number)`;
-let userInput = prompt(output);
+// 2
+const askInput = function () {
+  // 1.1
+  const questionText = `${poll.question}\n${poll.options.join(
+    '\n'
+  )}\n(Write option number)`;
+  let userInput = Number(prompt(questionText));
+
+  if (Number.isInteger(userInput) && userInput >= 0 && userInput <= 3) {
+    poll.answers[userInput]++;
+  } else {
+    alert(`Invalid input! Please enter a number between 0 and 3.`);
+  }
+  // 1.2
+
+  console.log(poll);
+};
+
+document.querySelector('.poll').addEventListener('click', askInput);
 
 /*
 const poll = {
