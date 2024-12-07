@@ -73,6 +73,7 @@ const currencies = new Map([
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
+/*
 /////////////////////////////////////////////////
 console.log('Slice: ');
 // Slice takes part of the array without mutating the original one
@@ -105,3 +106,10 @@ console.log(fullArr);
 console.log('Join: ');
 const joinedArr = fullArr.join(', ');
 console.log(joinedArr);
+*/
+// The new <.at()> method
+const arr = [23, 11, 64];
+console.log(arr[0]); // Old
+console.log(arr.at(1)); // New
+console.log(arr[arr.length - 1]); // Old
+console.log(arr.at(-1)); // New
