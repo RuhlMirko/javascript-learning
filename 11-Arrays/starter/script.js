@@ -124,8 +124,6 @@ movements.forEach(function (item, index, entireArr) {
     item >= 0 ? `Deposit of ${item}` : `Withdrawal of ${Math.abs(item)}`
   );
 });
-*/
-
 // For each with Maps
 const currencies = new Map([
   ['USD', 'United States dollar'],
@@ -135,3 +133,10 @@ const currencies = new Map([
 currencies.forEach(function (value, key, entireMap) {
   console.log(key, value);
 });
+// For each with Set
+const curr = ['USD', 'ARS', 'MEX', 'EUR', 'MEX', 'USD', 'ARS'];
+const uniqueCurr = new Set(curr);
+uniqueCurr.forEach(function (value, repeatValue, entireSet) {
+  console.log(value, repeatValue);
+});
+*/
