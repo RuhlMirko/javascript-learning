@@ -35,7 +35,18 @@ book.call(swiss, 583, 'Mary Cooper');
 const newFlight = [460, 'Jack Marston'];
 book.apply(swiss, newFlight); // Old version
 book.call(swiss, ...newFlight); // Newer version
-console.log(euroWings, swiss);
+
+const bookEW = book.bind(euroWings); // bind() returns a function
+const bookLX = book.bind(swiss);
+const bookAR = book.bind(aeroArg);
+bookEW(250, 'Steven');
+bookLX(125, 'Steven');
+bookAR(160, 'Steven');
+const bookEW23 = book.bind(euroWings, 23); // Add default parameters to the bind
+bookEW23('John Doe');
+bookEW23('Jane Doe');
+
+console.log(aeroArg, euroWings, swiss);
 /* Returning functions
 const greet = function (str) {
   return function (name) {
