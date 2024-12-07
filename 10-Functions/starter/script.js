@@ -1,5 +1,13 @@
 'use strict';
-/* 
+
+// anonymus functions (Inmediatly Invoked Function Expression) or IIFE
+(function () {
+  console.log('Run this time');
+  const privateNum = 34;
+})();
+(() => console.log('Never run again'))();
+
+/* Inherit fucntions from objects
 const aeroArg = {
   airline: 'AeroArg',
   iataCode: 'BA',
