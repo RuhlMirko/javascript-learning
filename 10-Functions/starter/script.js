@@ -60,9 +60,14 @@ document
 // Partial aplication
 const addTax = (rate, value) => value + value * rate;
 console.log(addTax(0.1, 200));
+
 // Copy the arrow function when you dont have an object for bind() use null
 const addIVA = addTax.bind(null, 0.21);
 console.log(addIVA(2300));
+// Challenge
+const addTax1 = rate => value => value + value * rate;
+const addIVA1 = addTax1(0.21);
+console.log(addIVA1(2600));
 
 /* Returning functions
 const greet = function (str) {
