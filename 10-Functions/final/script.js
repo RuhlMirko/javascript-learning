@@ -249,6 +249,20 @@ BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
 GOOD LUCK 😀
 */
 
+const poll = {
+  question: 'What is your favourite programming language?',
+  options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
+  // This generates [0, 0, 0, 0]. More in the next section 😃
+  answers: new Array(4).fill(0),
+};
+
+let output = poll.question;
+for (const item of poll.options) {
+  output += `\n${item}`;
+}
+output += `\n(Write option number)`;
+let userInput = prompt(output);
+
 /*
 const poll = {
   question: 'What is your favourite programming language?',
@@ -407,4 +421,3 @@ GOOD LUCK 😀
   });
 })();
 */
-
