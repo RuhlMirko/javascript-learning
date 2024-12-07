@@ -62,12 +62,32 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 /////////////////////////////////////////////////
+
+const displayMovement = function (movement) {
+  console.log(
+    movement.forEach(function (item, index) {
+      const checkType = item >= 0 ? `deposit` : `withdrawal`;
+      const html = `
+        <div class="movements">
+        <div class="movements__row">
+          <div class="movements__type movements__type--${checkType}">${
+        index + 1
+      } ${checkType}</div>
+          <div class="movements__date">3 days ago</div>
+          <div class="movements__value">${item}€</div>
+        </div>
+      `;
+      containerMovements.insertAdjacentHTML('afterbegin', html);
+    })
+  );
+};
+displayMovement(account1.movements);
+
+/////////////////////////////////////////////////
+//const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 /////////////////////////////////////////////////
 // LECTURES
-
-//const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
-/*
+/* Slices and splices
 /////////////////////////////////////////////////
 console.log('Slice: ');
 // Slice takes part of the array without mutating the original one
@@ -108,7 +128,6 @@ console.log(arr.at(1)); // New
 console.log(arr[arr.length - 1]); // Old
 console.log(arr.at(-1)); // New
 */
-
 /* For each method
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // Long Way
