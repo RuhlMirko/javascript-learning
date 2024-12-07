@@ -45,8 +45,18 @@ bookAR(160, 'Steven');
 const bookEW23 = book.bind(euroWings, 23); // Add default parameters to the bind
 bookEW23('John Doe');
 bookEW23('Jane Doe');
-
 console.log(aeroArg, euroWings, swiss);
+
+//
+aeroArg.planes = 300;
+aeroArg.buyPlane = function () {
+  this.planes++;
+  console.log(this.planes, this);
+};
+document
+  .querySelector('.buy')
+  .addEventListener('click', aeroArg.buyPlane.bind(aeroArg));
+
 /* Returning functions
 const greet = function (str) {
   return function (name) {
