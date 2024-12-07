@@ -9,11 +9,27 @@ const secureBooking = function () {
     console.log(`${passengerCount} passengers`);
   };
 };
-
 const booker = secureBooking();
+booker();
+booker();
 
-booker();
-booker();
+let f;
+const g = function () {
+  const a = 34;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+const h = function () {
+  const b = 43;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+g();
+f();
+h();
+f();
 
 /* Anonymus functions (Inmediatly Invoked Function Expression) or IIFE
 (function () {
