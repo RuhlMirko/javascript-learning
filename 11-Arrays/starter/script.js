@@ -92,5 +92,11 @@ console.log(arr);
 // Reverse mutates the original array
 console.log('Reverse: ');
 arr = ['a', 'b', 'c', 'd', 'e', 'f'];
-let newArr = ['j', 'i', 'h', 'g', 'f'];
+let newArr = ['j', 'i', 'h', 'g'];
 console.log(newArr.reverse());
+
+// Concat doesn't mutate the original array
+console.log('Concat: ');
+const fullArr = arr.concat(newArr);
+console.log([...arr, ...newArr]); // Same result
+console.log(fullArr);
