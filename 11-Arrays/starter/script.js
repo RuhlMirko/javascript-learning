@@ -115,6 +115,13 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const PnL = movements.reduce((acu, cur) => acu + cur, 0); // Short way
 console.log(PnL);
 */
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const maxValue = movements.reduce(
+  (accu, currt) => (accu > currt ? accu : currt),
+  movements[0]
+);
+console.log(maxValue);
 /* Filter method
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const deposits = movements.filter(item => item > 0);
