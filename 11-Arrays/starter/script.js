@@ -82,7 +82,7 @@ const displayMovement = function (movement) {
   });
 };
 displayMovement(account1.movements);
-// Addinf intials based on full names
+// Adding intials based on full names
 const createInitial = function (accObj) {
   accObj.forEach(function (curAcc) {
     curAcc.username = curAcc.owner
@@ -95,6 +95,12 @@ const createInitial = function (accObj) {
 createInitial(accounts);
 //accounts.forEach(item => createInitial(item.owner));
 console.log(accounts);
+
+// Filter method
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const deposits = movements.filter(item => item > 0);
+const withdrawals = movements.filter(item => item < 0);
+console.log(deposits, withdrawals);
 
 /* Map method
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
