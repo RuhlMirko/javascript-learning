@@ -134,9 +134,10 @@ const calcAverageHumanAge = function (ages) {
   const humanAge = ages
     .map(dogAge => (dogAge <= 2 ? dogAge * 2 : 16 + dogAge * 4))
     .filter(item => item > 18);
-
   // 3
-  const avg = humanAge.reduce((acu, cur) => acu + cur, 0) / 5;
+  const avg = Math.trunc(
+    humanAge.reduce((acu, cur) => acu + cur, 0) / humanAge.length
+  );
   console.log(
     `Human ages: ${humanAge.join(', ')}\nAverage of ages: ${avg} years old`
   );
