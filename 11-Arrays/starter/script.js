@@ -96,12 +96,20 @@ createInitial(accounts);
 //accounts.forEach(item => createInitial(item.owner));
 console.log(accounts);
 
-// Filter method
+// Reduce method
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const PnL = movements.reduce(function (acu, cur, index, arr) {
+  console.log(`Index ${index}: ${acu} `);
+  return acu + cur;
+}, 0);
+console.log(PnL);
+
+/* Filter method
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const deposits = movements.filter(item => item > 0);
 const withdrawals = movements.filter(item => item < 0);
 console.log(deposits, withdrawals);
-
+*/
 /* Map method
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const converted = movements.map(item => Math.trunc(item * 1.1));
