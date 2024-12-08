@@ -83,9 +83,13 @@ const displayMovement = function (movement) {
 };
 displayMovement(account1.movements);
 
+// Map method
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const converted = movements.map(item => Math.trunc(item * 1.1));
+console.log(converted);
+
 ///////////////////////////////////////
 // Coding Challenge #1
-
 /* 
 Julia and Kate are doing a study on dogs. So each of them asked 5 dog owners about their dog's age, and stored the data into an array (one array for each). For now, they are just interested in knowing whether a dog is an adult or a puppy. 
 A dog is an adult if it is at least 3 years old, and it's a puppy if it's less than 3 years old.
@@ -105,7 +109,7 @@ TEST DATA 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
 
 GOOD LUCK 😀
 */
-
+/* Coding Challenge complete
 // 1
 const checkDogs = function (dogsJulia, dogsKate) {
   const fixJuliaDogs = dogsJulia.slice(1, -2);
@@ -134,14 +138,14 @@ const checkDogs = function (dogsJulia, dogsKate) {
         : `Dog number ${index + 1} is still a puppy`
     );
   });
-  */
+  
 };
 
 console.log('Test data 1:');
 checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
 console.log('\nTest data 2:');
 checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
-
+*/
 /////////////////////////////////////////////////
 //const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 /////////////////////////////////////////////////
