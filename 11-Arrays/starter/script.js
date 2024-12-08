@@ -81,6 +81,13 @@ const displayMovement = function (movement) {
     //containerMovements.insertAdjacentHTML('beforeend', html); // inserts from beginning to end
   });
 };
+
+const calcDisplayBalance = function (movObj) {
+  const balance = movObj.reduce((acc, item) => acc + item, 0);
+  labelBalance.textContent = `${balance}€`;
+};
+
+calcDisplayBalance(account1.movements);
 displayMovement(account1.movements);
 // Adding intials based on full names
 const createInitial = function (accObj) {
@@ -92,18 +99,22 @@ const createInitial = function (accObj) {
       .join('');
   });
 };
+
 createInitial(accounts);
 //accounts.forEach(item => createInitial(item.owner));
 console.log(accounts);
 
-// Reduce method
+/* Reduce method
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-const PnL = movements.reduce(function (acu, cur, index, arr) {
+/* Long Way
+  function (acu, cur, index, arr) {
   console.log(`Index ${index}: ${acu} `);
   return acu + cur;
-}, 0);
+}
+//
+const PnL = movements.reduce((acu, cur) => acu + cur, 0); // Short way
 console.log(PnL);
-
+*/
 /* Filter method
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const deposits = movements.filter(item => item > 0);
