@@ -64,22 +64,21 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 
 const displayMovement = function (movement) {
-  console.log(
-    movement.forEach(function (item, index) {
-      const checkType = item >= 0 ? `deposit` : `withdrawal`;
-      const html = `
-        <div class="movements">
+  containerMovements.innerHTML = '';
+
+  movement.forEach(function (item, index) {
+    const checkType = item >= 0 ? `deposit` : `withdrawal`;
+    const html = `
         <div class="movements__row">
           <div class="movements__type movements__type--${checkType}">${
-        index + 1
-      } ${checkType}</div>
+      index + 1
+    } ${checkType}</div>
           <div class="movements__date">3 days ago</div>
           <div class="movements__value">${item}€</div>
         </div>
       `;
-      containerMovements.insertAdjacentHTML('afterbegin', html);
-    })
-  );
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+  });
 };
 displayMovement(account1.movements);
 
