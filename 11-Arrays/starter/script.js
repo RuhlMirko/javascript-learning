@@ -88,6 +88,15 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const converted = movements.map(item => Math.trunc(item * 1.1));
 console.log(converted);
 
+const movDescrip = movements.map((item, index, arr) => {
+  let result =
+    item > 0
+      ? `Movement ${index + 1}: You deposited ${item}`
+      : `Movement ${index + 1}: You withdrew ${Math.abs(item)}`;
+  return result;
+});
+console.log(movDescrip);
+
 ///////////////////////////////////////
 // Coding Challenge #1
 /* 
