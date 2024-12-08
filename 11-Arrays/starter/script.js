@@ -83,13 +83,16 @@ const displayMovement = function (movement) {
 };
 displayMovement(account1.movements);
 
-const user = 'Steven Thomas Williams';
-const initials = user
-  .toLowerCase()
-  .split(' ')
-  .map(word => word[0])
-  .join('');
-console.log(initials);
+const createInitial = function (fullName) {
+  const initials = fullName
+    .toLowerCase()
+    .split(' ')
+    .map(word => word[0])
+    .join('');
+  return initials;
+};
+
+console.log(createInitial('Steven Thomas Williams'));
 
 /* Map method
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
