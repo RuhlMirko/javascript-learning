@@ -82,17 +82,19 @@ const displayMovement = function (movement) {
   });
 };
 displayMovement(account1.movements);
-
-const createInitial = function (fullName) {
-  const initials = fullName
-    .toLowerCase()
-    .split(' ')
-    .map(word => word[0])
-    .join('');
-  return initials;
+// Addinf intials based on full names
+const createInitial = function (accObj) {
+  accObj.forEach(function (curAcc) {
+    curAcc.username = curAcc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(word => word[0])
+      .join('');
+  });
 };
-
-console.log(createInitial('Steven Thomas Williams'));
+createInitial(accounts);
+//accounts.forEach(item => createInitial(item.owner));
+console.log(accounts);
 
 /* Map method
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
