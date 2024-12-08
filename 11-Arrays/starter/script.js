@@ -83,7 +83,15 @@ const displayMovement = function (movement) {
 };
 displayMovement(account1.movements);
 
-// Map method
+const user = 'Steven Thomas Williams';
+const initials = user
+  .toLowerCase()
+  .split(' ')
+  .map(word => word[0])
+  .join('');
+console.log(initials);
+
+/* Map method
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const converted = movements.map(item => Math.trunc(item * 1.1));
 console.log(converted);
@@ -96,7 +104,7 @@ const movDescrip = movements.map((item, index, arr) => {
   return result;
 });
 console.log(movDescrip);
-
+*/
 ///////////////////////////////////////
 // Coding Challenge #1
 /* 
