@@ -128,7 +128,13 @@ console.log(accounts);
 // Find method
 const movements = account1.movements;
 const firstWithdrawal = movements.find(item => item < 0);
+
+const findJonas = accounts.find(
+  currAcc => currAcc.owner === 'Jonas Schmedtmann'
+);
+
 console.log(firstWithdrawal);
+console.log(findJonas);
 
 /* Coding Challenge #3
 ///////////////////////////////////////
