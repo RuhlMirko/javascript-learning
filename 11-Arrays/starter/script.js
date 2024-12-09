@@ -104,7 +104,7 @@ btnLogin.addEventListener('click', logInUser);
 // Already Logged
 
 const refreshMovs = function () {
-  calcDisplayBalance(currentAccount.movements);
+  calcDisplayBalance(currentAccount);
   calcDisplaySummary(currentAccount);
   displayMovement(currentAccount.movements);
 };
@@ -129,8 +129,9 @@ const displayMovement = function (movement) {
 };
 
 const calcDisplayBalance = function (movObj) {
-  const balance = movObj.reduce((acc, item) => acc + item, 0);
+  const balance = movObj.movements.reduce((acc, item) => acc + item, 0);
   labelBalance.textContent = `${balance}€`;
+  movObj.balance = balance;
 };
 
 const calcDisplaySummary = function (Obj) {
@@ -158,15 +159,28 @@ const calcDisplaySummary = function (Obj) {
 
 const transferBtn = function (e) {
   e.preventDefault();
+
   const amount = Number(inputTransferAmount.value);
   const receiverAcc = accounts.find(
     acc => acc.username === inputTransferTo.value
   );
+  if (
+    amount > 0 &&
+    receiverAcc &&
+    currentAccount.balance >= amount &&
+    receiverAcc?.username !== currentAccount.username
+  ) {
+    currentAccount.movements.push(Number(`-${amount}`));
+    receiverAcc.movements.push(Number(amount));
+    refreshMovs();
+  } else {
+    inputTransferAmount.value = '';
+    console.log('Invalid operation');
+  }
 
-  currentAccount.movements.push(Number(`-${amount}`));
-  refreshMovs();
   //console.log(receiverAcc, amount);
-  console.log(currentAccount.movements);
+  //console.log(currentAccount.movements);
+  //console.log(receiverAcc.movements);
 };
 
 btnTransfer.addEventListener('click', transferBtn);
