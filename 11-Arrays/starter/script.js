@@ -82,6 +82,11 @@ const logInUser = function (event) {
     acc => acc.username === inputLoginUsername.value
   );
   console.log(currentAccount);
+  containerApp.style.opacity = 1;
+
+  calcDisplayBalance(currentAccount.movements);
+  displayMovement(currentAccount.movements);
+  calcDisplaySummary(currentAccount);
 };
 
 btnLogin.addEventListener('click', logInUser);
@@ -111,8 +116,6 @@ const calcDisplayBalance = function (movObj) {
   const balance = movObj.reduce((acc, item) => acc + item, 0);
   labelBalance.textContent = `${balance}€`;
 };
-calcDisplayBalance(account1.movements);
-displayMovement(account1.movements);
 
 const calcDisplaySummary = function (Obj) {
   const movObj = Obj.movements;
@@ -135,7 +138,6 @@ const calcDisplaySummary = function (Obj) {
   labelSumInterest.textContent = intTotal + '€';
 };
 
-calcDisplaySummary(account1);
 /* Find method
 const movements = account1.movements;
 const firstWithdrawal = movements.find(item => item < 0);
