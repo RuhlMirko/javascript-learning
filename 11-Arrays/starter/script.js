@@ -156,7 +156,6 @@ const calcDisplaySummary = function (Obj) {
 };
 /////////////////////////////////////////////////
 // Transfers
-
 const transferBtn = function (e) {
   e.preventDefault();
 
@@ -183,7 +182,7 @@ const transferBtn = function (e) {
   //console.log(currentAccount.movements);
   //console.log(receiverAcc.movements);
 };
-
+// Close/Delete accounts
 const closeAcc = function (e) {
   e.preventDefault();
   const checkUser = inputCloseUsername.value === currentAccount.username;
@@ -197,14 +196,19 @@ const closeAcc = function (e) {
     containerApp.style.opacity = 0;
     inputClosePin.value = inputCloseUsername.value = '';
   }
-  console.log(accounts);
+  //console.log(accounts);
 };
 
 btnTransfer.addEventListener('click', transferBtn);
 btnClose.addEventListener('click', closeAcc);
 
-// find Index()
+/* some() and every()
 
+const movements = account1.movements;
+console.log(movements);
+console.log(movements.includes(-130)); // Equality
+console.log(movements.some(mov => mov > 5000)); // condition
+*/
 /* Find method
 const movements = account1.movements;
 const firstWithdrawal = movements.find(item => item < 0);
