@@ -106,15 +106,19 @@ const calcDisplaySummary = function (Obj) {
   const incomes = movObj
     .filter(item => item > 0)
     .reduce((accum, item) => accum + item);
-  labelSumIn.textContent = incomes;
+  labelSumIn.textContent = incomes + '€';
 
   const outcomes = Math.abs(
     movObj.filter(item => item < 0).reduce((accum, item) => accum + item)
   );
-  labelSumOut.textContent = outcomes;
+  labelSumOut.textContent = outcomes + '€';
 
-  const intTotal = incomes * Obj.interestRate - incomes;
-  labelSumInterest.textContent = intTotal;
+  const intTotal = movObj
+    .filter(item => item > 0)
+    .map(deposit => (deposit * Obj.interestRate) / 100)
+    .filter(int => int >= 1) // Only adds interest if bigger than 1
+    .reduce((acc, int) => acc + int, 0);
+  labelSumInterest.textContent = intTotal + '€';
 };
 
 calcDisplaySummary(account1);
