@@ -79,14 +79,16 @@ const logInUser = function (event) {
   // Prevents a reload
   event.preventDefault();
   currentAccount = accounts.find(
-    acc => acc.username === inputLoginUsername.value
+    acc => acc.username === inputLoginUsername.value.trim(' ').toLowerCase()
   );
-  console.log(currentAccount);
-  containerApp.style.opacity = 1;
 
-  calcDisplayBalance(currentAccount.movements);
-  displayMovement(currentAccount.movements);
-  calcDisplaySummary(currentAccount);
+  if (inputLoginPin.value == currentAccount.pin) {
+    console.log('Right password');
+    containerApp.style.opacity = 1;
+    calcDisplayBalance(currentAccount.movements);
+    displayMovement(currentAccount.movements);
+    calcDisplaySummary(currentAccount);
+  }
 };
 
 btnLogin.addEventListener('click', logInUser);
