@@ -173,6 +173,7 @@ const transferBtn = function (e) {
     currentAccount.movements.push(Number(`-${amount}`));
     receiverAcc.movements.push(Number(amount));
     refreshMovs();
+    inputTransferAmount.value = inputTransferTo.value = '';
   } else {
     inputTransferAmount.value = '';
     console.log('Invalid operation');
@@ -183,7 +184,26 @@ const transferBtn = function (e) {
   //console.log(receiverAcc.movements);
 };
 
+const closeAcc = function (e) {
+  e.preventDefault();
+  const checkUser = inputCloseUsername.value === currentAccount.username;
+  const checkPin = Number(inputClosePin.value) === currentAccount.pin;
+
+  if (checkUser && checkPin) {
+    const index = accounts.findIndex(
+      acc => acc.username === currentAccount.username
+    );
+    accounts.splice(index, 1);
+    containerApp.style.opacity = 0;
+    inputClosePin.value = inputCloseUsername.value = '';
+  }
+  console.log(accounts);
+};
+
 btnTransfer.addEventListener('click', transferBtn);
+btnClose.addEventListener('click', closeAcc);
+
+// find Index()
 
 /* Find method
 const movements = account1.movements;
