@@ -199,6 +199,17 @@ const closeAcc = function (e) {
   //console.log(accounts);
 };
 
+const giveLoan = function (e) {
+  e.preventDefault();
+
+  const amount = Number(inputLoanAmount.value);
+  if (amount > 0 && currentAccount.movements.some(mov => mov * 0.1 > amount)) {
+    console.log('Elegible');
+    console.log(currentAccount.movements.some(mov => mov * 0.1 > amount));
+  }
+};
+
+btnLoan.addEventListener('click', giveLoan);
 btnTransfer.addEventListener('click', transferBtn);
 btnClose.addEventListener('click', closeAcc);
 
