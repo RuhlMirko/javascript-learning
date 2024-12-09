@@ -79,15 +79,20 @@ const logInUser = function (event) {
   // Prevents a reload
   event.preventDefault();
   currentAccount = accounts.find(
-    acc => acc.username === inputLoginUsername.value.trim(' ').toLowerCase()
+    acc => acc.username === inputLoginUsername?.value.trim(' ').toLowerCase()
   );
 
-  if (inputLoginPin.value == currentAccount.pin) {
+  if (inputLoginPin.value == currentAccount?.pin) {
     console.log('Right password');
     containerApp.style.opacity = 1;
+    labelWelcome.textContent = `Welcome back ${
+      currentAccount.owner.split(' ')[0]
+    }`;
     calcDisplayBalance(currentAccount.movements);
     displayMovement(currentAccount.movements);
     calcDisplaySummary(currentAccount);
+  } else {
+    containerApp.style.opacity = 0;
   }
 };
 
