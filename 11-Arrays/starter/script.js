@@ -88,9 +88,11 @@ const logInUser = function (event) {
     labelWelcome.textContent = `Welcome back ${
       currentAccount.owner.split(' ')[0]
     }`;
-    calcDisplayBalance(currentAccount.movements);
-    displayMovement(currentAccount.movements);
-    calcDisplaySummary(currentAccount);
+    refreshMovs();
+
+    // Clear inputs
+    inputLoginUsername.value = inputLoginPin.value = '';
+    inputLoginPin.blur();
   } else {
     containerApp.style.opacity = 0;
   }
@@ -100,6 +102,13 @@ btnLogin.addEventListener('click', logInUser);
 
 /////////////////////////////////////////////////
 // Already Logged
+
+const refreshMovs = function () {
+  calcDisplayBalance(currentAccount.movements);
+  calcDisplaySummary(currentAccount);
+  displayMovement(currentAccount.movements);
+};
+
 const displayMovement = function (movement) {
   containerMovements.innerHTML = '';
 
@@ -144,6 +153,23 @@ const calcDisplaySummary = function (Obj) {
     .reduce((acc, int) => acc + int, 0);
   labelSumInterest.textContent = intTotal + '€';
 };
+/////////////////////////////////////////////////
+// Transfers
+
+const transferBtn = function (e) {
+  e.preventDefault();
+  const amount = Number(inputTransferAmount.value);
+  const receiverAcc = accounts.find(
+    acc => acc.username === inputTransferTo.value
+  );
+
+  currentAccount.movements.push(Number(`-${amount}`));
+  refreshMovs();
+  //console.log(receiverAcc, amount);
+  console.log(currentAccount.movements);
+};
+
+btnTransfer.addEventListener('click', transferBtn);
 
 /* Find method
 const movements = account1.movements;
