@@ -61,14 +61,27 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+// Adding intials based on full names
+const createInitial = function (accObj) {
+  accObj.forEach(function (curAcc) {
+    curAcc.username = curAcc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(word => word[0])
+      .join('');
+  });
+};
+createInitial(accounts);
 /////////////////////////////////////////////////
 // Log in
-
+let currentAccount;
 const logInUser = function (event) {
   // Prevents a reload
   event.preventDefault();
-
-  console.log('login');
+  currentAccount = accounts.find(
+    acc => acc.username === inputLoginUsername.value
+  );
+  console.log(currentAccount);
 };
 
 btnLogin.addEventListener('click', logInUser);
@@ -98,19 +111,8 @@ const calcDisplayBalance = function (movObj) {
   const balance = movObj.reduce((acc, item) => acc + item, 0);
   labelBalance.textContent = `${balance}€`;
 };
-
 calcDisplayBalance(account1.movements);
 displayMovement(account1.movements);
-// Adding intials based on full names
-const createInitial = function (accObj) {
-  accObj.forEach(function (curAcc) {
-    curAcc.username = curAcc.owner
-      .toLowerCase()
-      .split(' ')
-      .map(word => word[0])
-      .join('');
-  });
-};
 
 const calcDisplaySummary = function (Obj) {
   const movObj = Obj.movements;
@@ -132,9 +134,8 @@ const calcDisplaySummary = function (Obj) {
     .reduce((acc, int) => acc + int, 0);
   labelSumInterest.textContent = intTotal + '€';
 };
-createInitial(accounts);
-calcDisplaySummary(account1);
 
+calcDisplaySummary(account1);
 /* Find method
 const movements = account1.movements;
 const firstWithdrawal = movements.find(item => item < 0);
