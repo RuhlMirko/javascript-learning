@@ -100,14 +100,32 @@ const createInitial = function (accObj) {
   });
 };
 
+const calcDisplaySummary = function (Obj) {
+  const movObj = Obj.movements;
+
+  const incomes = movObj
+    .filter(item => item > 0)
+    .reduce((accum, item) => accum + item);
+  labelSumIn.textContent = incomes;
+
+  const outcomes = Math.abs(
+    movObj.filter(item => item < 0).reduce((accum, item) => accum + item)
+  );
+  labelSumOut.textContent = outcomes;
+
+  const intTotal = incomes * Obj.interestRate - incomes;
+  labelSumInterest.textContent = intTotal;
+};
+
+calcDisplaySummary(account1);
+
 createInitial(accounts);
 //accounts.forEach(item => createInitial(item.owner));
 console.log(accounts);
 
+/* Coding Challenge #2
 ///////////////////////////////////////
-// Coding Challenge #2
 
-/* 
 Let's go back to Julia and Kate's study about dogs. This time, they want to convert dog ages
  to human ages and calculate the average age of the dogs in their study.
 
@@ -127,7 +145,7 @@ TEST DATA 1: [5, 2, 4, 1, 15, 8, 3]
 TEST DATA 2: [16, 6, 10, 5, 6, 1, 4]
 
 GOOD LUCK 😀
-*/
+
 
 const calcAverageHumanAge = function (ages) {
   // 1 // 2
@@ -144,7 +162,7 @@ const calcAverageHumanAge = function (ages) {
 };
 calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
 calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
-
+*/
 /* Reduce method
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 /* Long Way
@@ -245,7 +263,6 @@ checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
 /////////////////////////////////////////////////
 //const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 /////////////////////////////////////////////////
-// LECTURES
 /* Slices and splices
 /////////////////////////////////////////////////
 console.log('Slice: ');
