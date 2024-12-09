@@ -62,7 +62,19 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 /////////////////////////////////////////////////
+// Log in
 
+const logInUser = function (event) {
+  // Prevents a reload
+  event.preventDefault();
+
+  console.log('login');
+};
+
+btnLogin.addEventListener('click', logInUser);
+
+/////////////////////////////////////////////////
+// Already Logged
 const displayMovement = function (movement) {
   containerMovements.innerHTML = '';
 
@@ -120,22 +132,19 @@ const calcDisplaySummary = function (Obj) {
     .reduce((acc, int) => acc + int, 0);
   labelSumInterest.textContent = intTotal + '€';
 };
-
 createInitial(accounts);
 calcDisplaySummary(account1);
-console.log(accounts);
 
-// Find method
+/* Find method
 const movements = account1.movements;
 const firstWithdrawal = movements.find(item => item < 0);
-
 const findJonas = accounts.find(
   currAcc => currAcc.owner === 'Jonas Schmedtmann'
 );
 
 console.log(firstWithdrawal);
 console.log(findJonas);
-
+*/
 /* Coding Challenge #3
 ///////////////////////////////////////
 Rewrite the 'calcAverageHumanAge' function from the previous challenge,
