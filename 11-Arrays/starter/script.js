@@ -151,7 +151,9 @@ const calcDisplaySummary = function (Obj) {
     .filter(item => item > 0)
     .map(deposit => (deposit * Obj.interestRate) / 100)
     .filter(int => int >= 1) // Only adds interest if bigger than 1
-    .reduce((acc, int) => acc + int, 0);
+    .reduce((acc, int) => acc + int, 0)
+    .toFixed(2);
+  //const roundInt = Math.round(intTotal * 100) / 100;
   labelSumInterest.textContent = intTotal + '€';
 };
 /////////////////////////////////////////////////
@@ -201,25 +203,38 @@ const closeAcc = function (e) {
 
 const giveLoan = function (e) {
   e.preventDefault();
+  console.log(currentAccount.movements);
 
   const amount = Number(inputLoanAmount.value);
-  if (amount > 0 && currentAccount.movements.some(mov => mov * 0.1 > amount)) {
-    console.log('Elegible');
-    console.log(currentAccount.movements.some(mov => mov * 0.1 > amount));
+  const maxLoan =
+    currentAccount.movements.reduce((accu, cur) => (accu > cur ? accu : cur)) *
+    0.1;
+  if (amount > 0 && amount <= maxLoan) {
+    currentAccount.movements.push(amount);
   }
+  refreshMovs();
+  inputLoanAmount.value = '';
+  console.log(currentAccount.movements);
 };
 
 btnLoan.addEventListener('click', giveLoan);
 btnTransfer.addEventListener('click', transferBtn);
 btnClose.addEventListener('click', closeAcc);
 
-/* some() and every()
+// some() and every()
 
 const movements = account1.movements;
 console.log(movements);
-console.log(movements.includes(-130)); // Equality
-console.log(movements.some(mov => mov > 5000)); // condition
-*/
+//console.log(movements.includes(-130)); // Equality
+//console.log(movements.some(mov => mov > 5000)); // condition
+// every() only returns tru if all elements meet the condition
+//console.log(movements.every(mov => mov > 0));
+// Separate callback as an argument
+const deposit = mov => mov > 0;
+console.log(account4.movements.every(deposit));
+console.log(account4.movements.some(deposit));
+console.log(account4.movements.filter(deposit));
+
 /* Find method
 const movements = account1.movements;
 const firstWithdrawal = movements.find(item => item < 0);
