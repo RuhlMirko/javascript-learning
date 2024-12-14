@@ -221,7 +221,7 @@ btnLoan.addEventListener('click', giveLoan);
 btnTransfer.addEventListener('click', transferBtn);
 btnClose.addEventListener('click', closeAcc);
 
-// some() and every()
+/* some() and every()
 
 const movements = account1.movements;
 console.log(movements);
@@ -234,6 +234,20 @@ const deposit = mov => mov > 0;
 console.log(account4.movements.every(deposit));
 console.log(account4.movements.some(deposit));
 console.log(account4.movements.filter(deposit));
+
+*/
+// Findlast and findlastIndex
+const movements = account1.movements;
+const lastWithdraw = movements.findLast(mov => mov < 0);
+let max = 0;
+const maxMov = movements.findLastIndex((mov, index) => Math.abs(mov) > 1000);
+
+console.log(
+  `Your movement larger than 1000 was ${
+    movements.length - maxMov - 1
+  } movements ago`
+);
+console.log(lastWithdraw, movements, maxMov);
 
 /* Find method
 const movements = account1.movements;
