@@ -221,6 +221,23 @@ btnLoan.addEventListener('click', giveLoan);
 btnTransfer.addEventListener('click', transferBtn);
 btnClose.addEventListener('click', closeAcc);
 
+/* Flat method
+const arr = [[1, 2, 3], [4, 5, 6], 7, 8]; // COnverts all inner arrays to a single arr
+//console.log(arr.flat());
+
+const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+console.log(arrDeep.flat());
+console.log(arrDeep.flat(2)); // Changes how deep of nesting has
+
+const allMovements = accounts.map(acc => acc.movements).flat();
+console.log(allMovements);
+console.log(allMovements.reduce((acc, curr) => acc + curr, 0));
+
+// .map().flat() = flatMap()
+const flatMapped = accounts.flatMap(acc => acc.movements);
+console.log(flatMapped);
+console.log(flatMapped.reduce((acc, curr) => acc + curr, 0));
+*/
 /* some() and every()
 
 const movements = account1.movements;
@@ -236,7 +253,7 @@ console.log(account4.movements.some(deposit));
 console.log(account4.movements.filter(deposit));
 
 */
-// Findlast and findlastIndex
+/* Findlast and findlastIndex
 const movements = account1.movements;
 const lastWithdraw = movements.findLast(mov => mov < 0);
 let max = 0;
@@ -248,7 +265,7 @@ console.log(
   } movements ago`
 );
 console.log(lastWithdraw, movements, maxMov);
-
+*/
 /* Find method
 const movements = account1.movements;
 const firstWithdrawal = movements.find(item => item < 0);
