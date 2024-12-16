@@ -282,6 +282,16 @@ const huskyWeight = breeds.at(
   breeds.findIndex(obj => obj.breed == 'Husky')
 ).averageWeight;
 console.log(huskyWeight);
+// 2. Find the name of the only breed that likes
+// both "running" and "fetch" ("dogBothActivities" variable)
+const dogBothActivities = breeds.find(obj =>
+  obj.activities.find(obj => obj === 'running' && obj === 'fetch')
+);
+console.log(dogBothActivities);
+console.log(
+  breeds.find(obj => obj.activities.find(act => act === 'fetch' && 'running'))
+);
+
 /* Flat method
 const arr = [[1, 2, 3], [4, 5, 6], 7, 8]; // COnverts all inner arrays to a single arr
 //console.log(arr.flat());
