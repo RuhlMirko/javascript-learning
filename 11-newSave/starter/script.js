@@ -74,3 +74,13 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+
+let arr = [11, 23, 24, 37, 44, 58, 97];
+console.log(arr.slice(1, 3)); // Range
+console.log(arr.slice(-3)); // Last 3 items
+console.log(arr.slice(0, -4)); // everything except last 4 items
+// Make copies of arrays without overwriting existing values
+const arrCopy = arr.slice();
+const arrCopy1 = [...arr];
+// Splice modifies the og array
+console.log(arr.splice(2), arr);
