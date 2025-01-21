@@ -88,9 +88,15 @@ console.log(fullArr);
 console.log(arr.splice(-2), arr);
 // Joins arrays into a single string
 console.log(fullArr.join('-'));
-*/
-
 // The method at() can take expressions as a parameter
 const arr = [23, 11, 64];
 // console.log(arr[arr.length - 1]);
 console.log(arr.at(-1));
+*/
+
+// For Each
+movements.forEach(function (item) {
+  console.log(
+    item > 0 ? `You deposited ${item}` : `You withdrew ${Math.abs(item)}`
+  );
+});
