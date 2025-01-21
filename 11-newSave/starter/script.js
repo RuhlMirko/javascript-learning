@@ -94,9 +94,21 @@ const arr = [23, 11, 64];
 console.log(arr.at(-1));
 */
 
-// For Each
+/* For Each
 movements.forEach(function (item) {
   console.log(
     item > 0 ? `You deposited ${item}` : `You withdrew ${Math.abs(item)}`
   );
 });
+*/
+
+/* For each Maps and Sets
+currencies.forEach(function (currVal, key, fullMap) {
+  console.log(currVal, key, fullMap);
+});
+const currenciesUnique = new Set(['USD', 'ARS', 'GBP', 'EUR', 'ARS', 'USD']);
+// Sets have two equal values, just ignore but write it anyways
+currenciesUnique.forEach(function (currVal, _, fullSet) {
+  console.log(currVal, _, fullSet);
+});
+*/
