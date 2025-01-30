@@ -112,3 +112,23 @@ currenciesUnique.forEach(function (currVal, _, fullSet) {
   console.log(currVal, _, fullSet);
 });
 */
+
+const displayMov = function (movements) {
+  containerMovements.innerHTML = '';
+
+  movements.forEach(function (item, i) {
+    const type = item > 0 ? 'deposit' : 'withdrawal';
+
+    const html = `  
+    <div class="movements__row">
+      <div class="movements__type movements__type--${type}">2 deposit</div>
+          <div class="movements__date">${i + 1}</div>
+          <div class="movements__value">${item}€</div>
+      </div>
+    `;
+
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+  });
+};
+
+displayMov(account2.movements);
